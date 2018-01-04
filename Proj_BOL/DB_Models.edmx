@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OPPOR_HAS_CATEGORY">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Oppor_Id" Type="int" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Assigned" Type="bit" />
+        </EntityType>
+        <EntityType Name="OPPOR_HAS_VOLUN">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+            <PropertyRef Name="Volun_Id" />
+          </Key>
+          <Property Name="OpporVolun_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oppor_Id" Type="int" Nullable="false" />
+          <Property Name="Volun_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CategoryDesc" Type="varchar" MaxLength="3000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Opportunity">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+          </Key>
+          <Property Name="Oppor_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oppor_Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Oppor_Description" Type="varchar" MaxLength="5000" />
+          <Property Name="Oppor_Dateofevent" Type="date" Nullable="false" />
+          <Property Name="Oppor_ImageThumbnailUrl" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_ImageUrl" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_Streetaddress" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_Streetaddress2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Oppor_City" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_State" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Oppor_County" Type="varchar" MaxLength="100" />
+          <Property Name="Oppor_Eldersource" Type="bit" />
+          <Property Name="Oppor_Eldersourceinstitute" Type="bit" />
+          <Property Name="Oppor_RequiresBackgroundCheck" Type="bit" />
+          <Property Name="Oppor_IsFeatured" Type="bit" />
+          <Property Name="Oppor_CreatedOn" Type="date" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="IsApproved" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tbl_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Volunteer">
+          <Key>
+            <PropertyRef Name="Volun_Id" />
+          </Key>
+          <Property Name="Volun_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VolunFname" Type="varchar" MaxLength="100" />
+          <Property Name="VolunLname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VolunEmail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VolunDateofbirth" Type="date" Nullable="false" />
+          <Property Name="VolunStreetaddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VolunStreetaddress2" Type="varchar" MaxLength="100" />
+          <Property Name="VolunCity" Type="varchar" MaxLength="100" />
+          <Property Name="VolunState" Type="varchar" MaxLength="100" />
+          <Property Name="VolunZip" Type="nvarchar" MaxLength="50" />
+          <Property Name="County" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VolunAvailableMonday" Type="bit" />
+          <Property Name="VolunAvailableMondayMorning" Type="bit" />
+          <Property Name="VolunAvailableMondayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableMondayEvening" Type="bit" />
+          <Property Name="VolunAvailableTuesday" Type="bit" />
+          <Property Name="VolunAvailableTuesdayMorning" Type="bit" />
+          <Property Name="VolunAvailableTuesdayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableTuesdayEvening" Type="bit" />
+          <Property Name="VolunAvailableWednesday" Type="bit" />
+          <Property Name="VolunAvailableWednesdayMorning" Type="bit" />
+          <Property Name="VolunAvailableWednesdayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableWednesdayEvening" Type="bit" />
+          <Property Name="VolunAvailableThursday" Type="bit" />
+          <Property Name="VolunAvailableThursdayMorning" Type="bit" />
+          <Property Name="VolunAvailableThursdayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableThursdayEvening" Type="bit" />
+          <Property Name="VolunAvailableFriday" Type="bit" />
+          <Property Name="VolunAvailableFridayMorning" Type="bit" />
+          <Property Name="VolunAvailableFridayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableFridayEvening" Type="bit" />
+          <Property Name="VolunAvailableSaturday" Type="bit" />
+          <Property Name="VolunAvailableSaturdayMorning" Type="bit" />
+          <Property Name="VolunAvailableSaturdayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableSaturdayEvening" Type="bit" />
+          <Property Name="VolunAvailableSunday" Type="bit" />
+          <Property Name="VolunAvailableSundayMorning" Type="bit" />
+          <Property Name="VolunAvailableSundayAfternoon" Type="bit" />
+          <Property Name="VolunAvailableSundayEvening" Type="bit" />
+          <Property Name="VoluntNutrition" Type="bit" />
+          <Property Name="VolunTrainingFacilitator" Type="bit" />
+          <Property Name="VolunAdmin" Type="bit" />
+          <Property Name="VolunGeneral" Type="bit" />
+          <Property Name="VolunHealthyliving" Type="bit" />
+          <Property Name="VolunDiseaseManagement" Type="bit" />
+          <Property Name="VolunFallsPrevention" Type="bit" />
+          <Property Name="VolunCaregiver" Type="bit" />
+          <Property Name="VolunMentalWellness" Type="bit" />
+          <Property Name="VolunEvents" Type="bit" />
+          <Property Name="VolunSocialMedia" Type="bit" />
+          <Property Name="VolunOtherInterest" Type="nvarchar" MaxLength="250" />
+          <Property Name="VolunBackgroundCheckRequired" Type="bit" />
+          <Property Name="VolunBackgroundCheckCompletedOn" Type="datetime2" Precision="7" />
+          <Property Name="VolunBackgroundCheckExpiresOn" Type="datetime2" Precision="7" />
+          <Property Name="VolunActivitiesParticipated" Type="varchar" MaxLength="2000" />
+          <Property Name="VolunMarkVolunteer" Type="bit" />
+          <Property Name="VolunFlagged" Type="bit" />
+          <Property Name="VolunFlaggedInformation" Type="varchar" MaxLength="2000" />
+          <Property Name="VolunGeneralNotes" Type="nvarchar" MaxLength="3000" />
+          <Property Name="VolunUpdateHours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__OPPOR_HAS__Categ__48CFD27E">
+          <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
+          <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_CATEGORY">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Oppor__47DBAE45">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_CATEGORY">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Oppor__534D60F1">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_VOLUN">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Volun__5441852A">
+          <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
+          <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Volunteer">
+              <PropertyRef Name="Volun_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_VOLUN">
+              <PropertyRef Name="Volun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="OPPOR_HAS_CATEGORY" EntityType="Self.OPPOR_HAS_CATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPPOR_HAS_VOLUN" EntityType="Self.OPPOR_HAS_VOLUN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__48CFD27E" Association="Self.FK__OPPOR_HAS__Categ__48CFD27E">
+            <End Role="tbl_Category" EntitySet="tbl_Category" />
+            <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__47DBAE45" Association="Self.FK__OPPOR_HAS__Oppor__47DBAE45">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__534D60F1" Association="Self.FK__OPPOR_HAS__Oppor__534D60F1">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__5441852A" Association="Self.FK__OPPOR_HAS__Volun__5441852A">
+            <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
+            <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OPPOR_HAS_CATEGORY">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Assigned" Type="Boolean" />
+          <NavigationProperty Name="tbl_Category" Relationship="Self.FK__OPPOR_HAS__Categ__48CFD27E" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Category" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__47DBAE45" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Opportunity" />
+        </EntityType>
+        <EntityType Name="OPPOR_HAS_VOLUN">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+            <PropertyRef Name="Volun_Id" />
+          </Key>
+          <Property Name="OpporVolun_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
+          <Property Name="Volun_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__534D60F1" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OPPOR_HAS__Volun__5441852A" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Volunteer" />
+        </EntityType>
+        <EntityType Name="tbl_Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CategoryDesc" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Categ__48CFD27E" FromRole="tbl_Category" ToRole="OPPOR_HAS_CATEGORY" />
+        </EntityType>
+        <EntityType Name="tbl_Opportunity">
+          <Key>
+            <PropertyRef Name="Oppor_Id" />
+          </Key>
+          <Property Name="Oppor_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oppor_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Oppor_Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_Dateofevent" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Oppor_ImageThumbnailUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_Streetaddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_Streetaddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Oppor_City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_County" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Oppor_Eldersource" Type="Boolean" />
+          <Property Name="Oppor_Eldersourceinstitute" Type="Boolean" />
+          <Property Name="Oppor_RequiresBackgroundCheck" Type="Boolean" />
+          <Property Name="Oppor_IsFeatured" Type="Boolean" />
+          <Property Name="Oppor_CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Oppor__47DBAE45" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_CATEGORY" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Oppor__534D60F1" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_VOLUN" />
+        </EntityType>
+        <EntityType Name="tbl_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Volunteer">
+          <Key>
+            <PropertyRef Name="Volun_Id" />
+          </Key>
+          <Property Name="Volun_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VolunFname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VolunLname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VolunEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VolunDateofbirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="VolunStreetaddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VolunStreetaddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VolunCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VolunState" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VolunZip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VolunAvailableMonday" Type="Boolean" />
+          <Property Name="VolunAvailableMondayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableMondayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableMondayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableTuesday" Type="Boolean" />
+          <Property Name="VolunAvailableTuesdayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableTuesdayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableTuesdayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableWednesday" Type="Boolean" />
+          <Property Name="VolunAvailableWednesdayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableWednesdayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableWednesdayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableThursday" Type="Boolean" />
+          <Property Name="VolunAvailableThursdayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableThursdayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableThursdayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableFriday" Type="Boolean" />
+          <Property Name="VolunAvailableFridayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableFridayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableFridayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableSaturday" Type="Boolean" />
+          <Property Name="VolunAvailableSaturdayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableSaturdayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableSaturdayEvening" Type="Boolean" />
+          <Property Name="VolunAvailableSunday" Type="Boolean" />
+          <Property Name="VolunAvailableSundayMorning" Type="Boolean" />
+          <Property Name="VolunAvailableSundayAfternoon" Type="Boolean" />
+          <Property Name="VolunAvailableSundayEvening" Type="Boolean" />
+          <Property Name="VoluntNutrition" Type="Boolean" />
+          <Property Name="VolunTrainingFacilitator" Type="Boolean" />
+          <Property Name="VolunAdmin" Type="Boolean" />
+          <Property Name="VolunGeneral" Type="Boolean" />
+          <Property Name="VolunHealthyliving" Type="Boolean" />
+          <Property Name="VolunDiseaseManagement" Type="Boolean" />
+          <Property Name="VolunFallsPrevention" Type="Boolean" />
+          <Property Name="VolunCaregiver" Type="Boolean" />
+          <Property Name="VolunMentalWellness" Type="Boolean" />
+          <Property Name="VolunEvents" Type="Boolean" />
+          <Property Name="VolunSocialMedia" Type="Boolean" />
+          <Property Name="VolunOtherInterest" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="VolunBackgroundCheckRequired" Type="Boolean" />
+          <Property Name="VolunBackgroundCheckCompletedOn" Type="DateTime" Precision="7" />
+          <Property Name="VolunBackgroundCheckExpiresOn" Type="DateTime" Precision="7" />
+          <Property Name="VolunActivitiesParticipated" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="VolunMarkVolunteer" Type="Boolean" />
+          <Property Name="VolunFlagged" Type="Boolean" />
+          <Property Name="VolunFlaggedInformation" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="VolunGeneralNotes" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="VolunUpdateHours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Volun__5441852A" FromRole="tbl_Volunteer" ToRole="OPPOR_HAS_VOLUN" />
+        </EntityType>
+        <Association Name="FK__OPPOR_HAS__Categ__48CFD27E">
+          <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
+          <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_CATEGORY">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Oppor__47DBAE45">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_CATEGORY">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Oppor__534D60F1">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_VOLUN">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Volun__5441852A">
+          <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
+          <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Volunteer">
+              <PropertyRef Name="Volun_Id" />
+            </Principal>
+            <Dependent Role="OPPOR_HAS_VOLUN">
+              <PropertyRef Name="Volun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_Models" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OPPOR_HAS_CATEGORY" EntityType="Self.OPPOR_HAS_CATEGORY" />
+          <EntitySet Name="OPPOR_HAS_VOLUN" EntityType="Self.OPPOR_HAS_VOLUN" />
+          <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" />
+          <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" />
+          <EntitySet Name="tbl_User" EntityType="Self.tbl_User" />
+          <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" />
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__48CFD27E" Association="Self.FK__OPPOR_HAS__Categ__48CFD27E">
+            <End Role="tbl_Category" EntitySet="tbl_Category" />
+            <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__47DBAE45" Association="Self.FK__OPPOR_HAS__Oppor__47DBAE45">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__534D60F1" Association="Self.FK__OPPOR_HAS__Oppor__534D60F1">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__5441852A" Association="Self.FK__OPPOR_HAS__Volun__5441852A">
+            <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
+            <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DB_Models">
+          <EntitySetMapping Name="OPPOR_HAS_CATEGORY">
+            <EntityTypeMapping TypeName="Model.OPPOR_HAS_CATEGORY">
+              <MappingFragment StoreEntitySet="OPPOR_HAS_CATEGORY">
+                <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Assigned" ColumnName="Assigned" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPPOR_HAS_VOLUN">
+            <EntityTypeMapping TypeName="Model.OPPOR_HAS_VOLUN">
+              <MappingFragment StoreEntitySet="OPPOR_HAS_VOLUN">
+                <ScalarProperty Name="OpporVolun_ID" ColumnName="OpporVolun_ID" />
+                <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
+                <ScalarProperty Name="Volun_Id" ColumnName="Volun_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Category">
+            <EntityTypeMapping TypeName="Model.tbl_Category">
+              <MappingFragment StoreEntitySet="tbl_Category">
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Opportunity">
+            <EntityTypeMapping TypeName="Model.tbl_Opportunity">
+              <MappingFragment StoreEntitySet="tbl_Opportunity">
+                <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
+                <ScalarProperty Name="Oppor_Name" ColumnName="Oppor_Name" />
+                <ScalarProperty Name="Oppor_Description" ColumnName="Oppor_Description" />
+                <ScalarProperty Name="Oppor_Dateofevent" ColumnName="Oppor_Dateofevent" />
+                <ScalarProperty Name="Oppor_ImageThumbnailUrl" ColumnName="Oppor_ImageThumbnailUrl" />
+                <ScalarProperty Name="Oppor_ImageUrl" ColumnName="Oppor_ImageUrl" />
+                <ScalarProperty Name="Oppor_Streetaddress" ColumnName="Oppor_Streetaddress" />
+                <ScalarProperty Name="Oppor_Streetaddress2" ColumnName="Oppor_Streetaddress2" />
+                <ScalarProperty Name="Oppor_City" ColumnName="Oppor_City" />
+                <ScalarProperty Name="Oppor_State" ColumnName="Oppor_State" />
+                <ScalarProperty Name="Oppor_Zip" ColumnName="Oppor_Zip" />
+                <ScalarProperty Name="Oppor_County" ColumnName="Oppor_County" />
+                <ScalarProperty Name="Oppor_Eldersource" ColumnName="Oppor_Eldersource" />
+                <ScalarProperty Name="Oppor_Eldersourceinstitute" ColumnName="Oppor_Eldersourceinstitute" />
+                <ScalarProperty Name="Oppor_RequiresBackgroundCheck" ColumnName="Oppor_RequiresBackgroundCheck" />
+                <ScalarProperty Name="Oppor_IsFeatured" ColumnName="Oppor_IsFeatured" />
+                <ScalarProperty Name="Oppor_CreatedOn" ColumnName="Oppor_CreatedOn" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_User">
+            <EntityTypeMapping TypeName="Model.tbl_User">
+              <MappingFragment StoreEntitySet="tbl_User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Volunteer">
+            <EntityTypeMapping TypeName="Model.tbl_Volunteer">
+              <MappingFragment StoreEntitySet="tbl_Volunteer">
+                <ScalarProperty Name="Volun_Id" ColumnName="Volun_Id" />
+                <ScalarProperty Name="VolunFname" ColumnName="VolunFname" />
+                <ScalarProperty Name="VolunLname" ColumnName="VolunLname" />
+                <ScalarProperty Name="VolunEmail" ColumnName="VolunEmail" />
+                <ScalarProperty Name="VolunDateofbirth" ColumnName="VolunDateofbirth" />
+                <ScalarProperty Name="VolunStreetaddress" ColumnName="VolunStreetaddress" />
+                <ScalarProperty Name="VolunStreetaddress2" ColumnName="VolunStreetaddress2" />
+                <ScalarProperty Name="VolunCity" ColumnName="VolunCity" />
+                <ScalarProperty Name="VolunState" ColumnName="VolunState" />
+                <ScalarProperty Name="VolunZip" ColumnName="VolunZip" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="VolunAvailableMonday" ColumnName="VolunAvailableMonday" />
+                <ScalarProperty Name="VolunAvailableMondayMorning" ColumnName="VolunAvailableMondayMorning" />
+                <ScalarProperty Name="VolunAvailableMondayAfternoon" ColumnName="VolunAvailableMondayAfternoon" />
+                <ScalarProperty Name="VolunAvailableMondayEvening" ColumnName="VolunAvailableMondayEvening" />
+                <ScalarProperty Name="VolunAvailableTuesday" ColumnName="VolunAvailableTuesday" />
+                <ScalarProperty Name="VolunAvailableTuesdayMorning" ColumnName="VolunAvailableTuesdayMorning" />
+                <ScalarProperty Name="VolunAvailableTuesdayAfternoon" ColumnName="VolunAvailableTuesdayAfternoon" />
+                <ScalarProperty Name="VolunAvailableTuesdayEvening" ColumnName="VolunAvailableTuesdayEvening" />
+                <ScalarProperty Name="VolunAvailableWednesday" ColumnName="VolunAvailableWednesday" />
+                <ScalarProperty Name="VolunAvailableWednesdayMorning" ColumnName="VolunAvailableWednesdayMorning" />
+                <ScalarProperty Name="VolunAvailableWednesdayAfternoon" ColumnName="VolunAvailableWednesdayAfternoon" />
+                <ScalarProperty Name="VolunAvailableWednesdayEvening" ColumnName="VolunAvailableWednesdayEvening" />
+                <ScalarProperty Name="VolunAvailableThursday" ColumnName="VolunAvailableThursday" />
+                <ScalarProperty Name="VolunAvailableThursdayMorning" ColumnName="VolunAvailableThursdayMorning" />
+                <ScalarProperty Name="VolunAvailableThursdayAfternoon" ColumnName="VolunAvailableThursdayAfternoon" />
+                <ScalarProperty Name="VolunAvailableThursdayEvening" ColumnName="VolunAvailableThursdayEvening" />
+                <ScalarProperty Name="VolunAvailableFriday" ColumnName="VolunAvailableFriday" />
+                <ScalarProperty Name="VolunAvailableFridayMorning" ColumnName="VolunAvailableFridayMorning" />
+                <ScalarProperty Name="VolunAvailableFridayAfternoon" ColumnName="VolunAvailableFridayAfternoon" />
+                <ScalarProperty Name="VolunAvailableFridayEvening" ColumnName="VolunAvailableFridayEvening" />
+                <ScalarProperty Name="VolunAvailableSaturday" ColumnName="VolunAvailableSaturday" />
+                <ScalarProperty Name="VolunAvailableSaturdayMorning" ColumnName="VolunAvailableSaturdayMorning" />
+                <ScalarProperty Name="VolunAvailableSaturdayAfternoon" ColumnName="VolunAvailableSaturdayAfternoon" />
+                <ScalarProperty Name="VolunAvailableSaturdayEvening" ColumnName="VolunAvailableSaturdayEvening" />
+                <ScalarProperty Name="VolunAvailableSunday" ColumnName="VolunAvailableSunday" />
+                <ScalarProperty Name="VolunAvailableSundayMorning" ColumnName="VolunAvailableSundayMorning" />
+                <ScalarProperty Name="VolunAvailableSundayAfternoon" ColumnName="VolunAvailableSundayAfternoon" />
+                <ScalarProperty Name="VolunAvailableSundayEvening" ColumnName="VolunAvailableSundayEvening" />
+                <ScalarProperty Name="VoluntNutrition" ColumnName="VoluntNutrition" />
+                <ScalarProperty Name="VolunTrainingFacilitator" ColumnName="VolunTrainingFacilitator" />
+                <ScalarProperty Name="VolunAdmin" ColumnName="VolunAdmin" />
+                <ScalarProperty Name="VolunGeneral" ColumnName="VolunGeneral" />
+                <ScalarProperty Name="VolunHealthyliving" ColumnName="VolunHealthyliving" />
+                <ScalarProperty Name="VolunDiseaseManagement" ColumnName="VolunDiseaseManagement" />
+                <ScalarProperty Name="VolunFallsPrevention" ColumnName="VolunFallsPrevention" />
+                <ScalarProperty Name="VolunCaregiver" ColumnName="VolunCaregiver" />
+                <ScalarProperty Name="VolunMentalWellness" ColumnName="VolunMentalWellness" />
+                <ScalarProperty Name="VolunEvents" ColumnName="VolunEvents" />
+                <ScalarProperty Name="VolunSocialMedia" ColumnName="VolunSocialMedia" />
+                <ScalarProperty Name="VolunOtherInterest" ColumnName="VolunOtherInterest" />
+                <ScalarProperty Name="VolunBackgroundCheckRequired" ColumnName="VolunBackgroundCheckRequired" />
+                <ScalarProperty Name="VolunBackgroundCheckCompletedOn" ColumnName="VolunBackgroundCheckCompletedOn" />
+                <ScalarProperty Name="VolunBackgroundCheckExpiresOn" ColumnName="VolunBackgroundCheckExpiresOn" />
+                <ScalarProperty Name="VolunActivitiesParticipated" ColumnName="VolunActivitiesParticipated" />
+                <ScalarProperty Name="VolunMarkVolunteer" ColumnName="VolunMarkVolunteer" />
+                <ScalarProperty Name="VolunFlagged" ColumnName="VolunFlagged" />
+                <ScalarProperty Name="VolunFlaggedInformation" ColumnName="VolunFlaggedInformation" />
+                <ScalarProperty Name="VolunGeneralNotes" ColumnName="VolunGeneralNotes" />
+                <ScalarProperty Name="VolunUpdateHours" ColumnName="VolunUpdateHours" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

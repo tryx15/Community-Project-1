@@ -8,3 +8,6 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\Proj_BO
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\SProj_DAL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\Proj_BOL.pdb
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\EntityFramework.xml

@@ -6,3 +6,6 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\obj\Debug\SProj_D
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\obj\Debug\SProj_DAL.pdb
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\bin\Debug\Proj_BOL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_DAL\bin\Debug\EntityFramework.xml
