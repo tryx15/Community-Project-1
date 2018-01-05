@@ -125,6 +125,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Common\Views\Opportunity\Index.cshtml" />
+    <Content Include="Areas\Volunteer\Views\web.config" />
+    <Content Include="Areas\Volunteer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Volunteer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Volunteer\Views\Volunteer\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -149,6 +153,8 @@
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\OpportunityController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
+    <Compile Include="Areas\Volunteer\Controllers\VolunteerController.cs" />
+    <Compile Include="Areas\Volunteer\VolunteerAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +182,7 @@
     <Folder Include="Areas\Security\Controllers\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
+    <Folder Include="Areas\Volunteer\Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

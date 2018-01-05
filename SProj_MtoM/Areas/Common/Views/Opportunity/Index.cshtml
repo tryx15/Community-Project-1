@@ -11,7 +11,8 @@
     
     <div class="well">
         <h3>
-            <strong>@Html.DisplayFor(modelItem => item.Oppor_Name)</strong>
+            <strong><a target="_blank" href=@item.Oppor_Name>@item.Oppor_Name</a></strong>
+                     @*@Html.DisplayFor(modelItem => item.Oppor_Name)*@
                    @Html.DisplayFor(modelItem => item.Oppor_Description)
             <span class="pull-right label label-primary">
                 @Html.DisplayFor(modelItem => item.Oppor_Dateofevent)
@@ -20,3 +21,10 @@
     </div>
 
         }
+@*@{
+    double TotalPage = @ViewBag.TotalPages;
+}
+@for (int i = 1; i <= TotalPage; i++)
+{
+    <a>@i  </a>
+}*@
