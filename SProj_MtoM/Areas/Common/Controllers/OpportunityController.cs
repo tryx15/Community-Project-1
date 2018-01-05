@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SProj_BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,16 @@ namespace SProj_MtoM.Areas.Common.Controllers
 {
     public class OpportunityController : Controller
     {
+        private Opportunity_Bs objBs;
+        public OpportunityController()
+        {
+            objBs = new Opportunity_Bs();
+        }
         // GET: Common/Opportunity
         public ActionResult Index()
         {
-            return View();
+            var opportunities = objBs.GetALL();
+            return View(opportunities);
         }
     }
 }

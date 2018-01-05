@@ -33,3 +33,6 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\BootstrapMvc
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\BootstrapMvc.Bootstrap3Mvc5.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\BootstrapMvc.Core.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\BootstrapMvc.Mvc5.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SProj_DAL.dll.config

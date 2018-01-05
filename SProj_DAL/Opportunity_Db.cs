@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SProj_DAL
 {
-    class Opportunity_Db
+    public class Opportunity_Db
     {
         private DB_Models db;
 

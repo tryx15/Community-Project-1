@@ -1,7 +1,22 @@
-﻿
+﻿@model IEnumerable<Proj_BOL.tbl_Opportunity>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Opportunity</h2>
 
+@foreach (var item in Model)
+{
+    
+    <div class="well">
+        <h3>
+            <strong>@Html.DisplayFor(modelItem => item.Oppor_Name)</strong>
+                   @Html.DisplayFor(modelItem => item.Oppor_Description)
+            <span class="pull-right label label-primary">
+                @Html.DisplayFor(modelItem => item.Oppor_Dateofevent)
+            </span>
+        </h3>
+    </div>
+
+        }
