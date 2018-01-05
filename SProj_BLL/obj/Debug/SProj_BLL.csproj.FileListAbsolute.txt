@@ -11,3 +11,4 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\SProj_D
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\EntityFramework.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\Proj_BOL.dll.config
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_BLL\bin\Debug\SProj_DAL.dll.config

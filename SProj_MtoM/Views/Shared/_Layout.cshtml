@@ -20,7 +20,16 @@
                 @Html.ActionLink("ElderSource", "Index", "Home", new { area = "Common" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">          
+                        <li>@Html.ActionLink("Home", "Index", new { Controller = "Home", Area = "Common" })</li>
+                        <li>@Html.ActionLink("Opportunity", "Index", new { Controller = "Opportunity", Area = "Common" })</li>
+                        <li>@Html.ActionLink("Add", "Index", new { Controller = "Category", Area = "Admin" })</li>
+                        <li>@Html.ActionLink("View", "Index", new { Controller = "ListCategory", Area = "Admin" })</li>
+                        <li>@Html.ActionLink("ApproveOrReject", "Index", new { Controller = "ApproveOppor", Area = "Admin" })</li>
+                        <li>@Html.ActionLink("ListVolunteers", "Index", new { Controller = "ListVolunteer", Area = "Admin" })</li>
+                        <li>@Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", Area = "Security" })</li>
+                    
+             
                 </ul>
             </div>
         </div>
