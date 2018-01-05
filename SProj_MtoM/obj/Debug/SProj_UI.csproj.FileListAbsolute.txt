@@ -27,3 +27,5 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SProj_BLL.pd
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\EntityFramework.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Proj_BOL.dll.config
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\EntityFramework.SqlServer.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\EntityFramework.SqlServer.xml
