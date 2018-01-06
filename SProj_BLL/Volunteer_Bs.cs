@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SProj_BLL
 {
-    class Volunteer_Bs
+    public class Volunteer_Bs
     {
         private Volunteer_Db objDb;
 
