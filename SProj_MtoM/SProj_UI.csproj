@@ -119,7 +119,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\Views\ListVolunteer\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -129,6 +128,7 @@
     <Content Include="Areas\Volunteer\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Volunteer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Volunteer\Views\Volunteer\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
