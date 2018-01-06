@@ -80,8 +80,8 @@ namespace Proj_BOL
         public string VolunFlaggedInformation { get; set; }
         public string VolunGeneralNotes { get; set; }
         public Nullable<decimal> VolunUpdateHours { get; set; }
+        public string IsApproved { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OPPOR_HAS_VOLUN> OPPOR_HAS_VOLUN { get; set; }

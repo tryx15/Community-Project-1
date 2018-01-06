@@ -17,9 +17,9 @@ namespace SProj_MtoM.Areas.Common.Controllers
         // GET: Common/Opportunity
         public ActionResult Index(string Page)
         {
-            var opportunities = objBs.GetALL().Where(x=>x.IsApproved=="A").ToList();
+            var opportunities = objBs.GetALL().ToList();
 
-            ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Where(x => x.IsApproved == "A").Count() / 10.0);
+            ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Count() / 10.0);
             int page = int.Parse(Page == null ? "1" : Page);
             ViewBag.Page = page;
             opportunities = opportunities.Skip((page - 1) * 10).Take(10).ToList();

@@ -21,7 +21,8 @@ namespace SProj_MtoM.Areas.Admin.Controllers
         {
             ViewBag.SortOrder = SortOrder;
             ViewBag.SortBy = SortBy;
-            var volunteers = objBs.GetALL().ToList();
+            var volunteers = objBs.GetALL().Where(x => x.IsApproved == "A").ToList();
+
 
             #region SwitchCase
             switch (SortBy)
@@ -41,15 +42,15 @@ namespace SProj_MtoM.Areas.Admin.Controllers
                     }
                     break;
 
-                case "Role":
+                case "IsApproved":
                     switch (SortOrder)
                     {
 
                         case "Asc":
-                            volunteers = volunteers.OrderBy(x => x.Role).ToList();
+                            volunteers = volunteers.OrderBy(x => x.IsApproved).ToList();
                             break;
                         case "Desc":
-                            volunteers = volunteers.OrderByDescending(x => x.Role).ToList();
+                            volunteers = volunteers.OrderByDescending(x => x.IsApproved).ToList();
                             break;
                         default:
                             break;

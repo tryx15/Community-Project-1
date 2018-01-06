@@ -53,7 +53,7 @@
           <Property Name="Oppor_IsFeatured" Type="bit" />
           <Property Name="Oppor_CreatedOn" Type="date" Nullable="false" />
           <Property Name="UserId" Type="int" />
-          <Property Name="IsApproved" Type="varchar" MaxLength="1" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbl_User">
           <Key>
@@ -128,10 +128,10 @@
           <Property Name="VolunFlaggedInformation" Type="varchar" MaxLength="2000" />
           <Property Name="VolunGeneralNotes" Type="nvarchar" MaxLength="3000" />
           <Property Name="VolunUpdateHours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsApproved" Type="varchar" MaxLength="1" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="Role" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__OPPOR_HAS__Categ__48CFD27E">
+        <Association Name="FK__OPPOR_HAS__Categ__68487DD7">
           <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__47DBAE45">
+        <Association Name="FK__OPPOR_HAS__Oppor__6754599E">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__534D60F1">
+        <Association Name="FK__OPPOR_HAS__Oppor__6B24EA82">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,7 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Volun__5441852A">
+        <Association Name="FK__OPPOR_HAS__Volun__6C190EBB">
           <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -186,19 +186,19 @@
           <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__OPPOR_HAS__Categ__48CFD27E" Association="Self.FK__OPPOR_HAS__Categ__48CFD27E">
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__68487DD7" Association="Self.FK__OPPOR_HAS__Categ__68487DD7">
             <End Role="tbl_Category" EntitySet="tbl_Category" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__47DBAE45" Association="Self.FK__OPPOR_HAS__Oppor__47DBAE45">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6754599E" Association="Self.FK__OPPOR_HAS__Oppor__6754599E">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__534D60F1" Association="Self.FK__OPPOR_HAS__Oppor__534D60F1">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6B24EA82" Association="Self.FK__OPPOR_HAS__Oppor__6B24EA82">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Volun__5441852A" Association="Self.FK__OPPOR_HAS__Volun__5441852A">
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__6C190EBB" Association="Self.FK__OPPOR_HAS__Volun__6C190EBB">
             <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
@@ -216,8 +216,8 @@
           <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
           <Property Name="Category_Id" Type="Int32" Nullable="false" />
           <Property Name="Assigned" Type="Boolean" />
-          <NavigationProperty Name="tbl_Category" Relationship="Self.FK__OPPOR_HAS__Categ__48CFD27E" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Category" />
-          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__47DBAE45" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Category" Relationship="Self.FK__OPPOR_HAS__Categ__68487DD7" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Category" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__6754599E" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Opportunity" />
         </EntityType>
         <EntityType Name="OPPOR_HAS_VOLUN">
           <Key>
@@ -227,8 +227,8 @@
           <Property Name="OpporVolun_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
           <Property Name="Volun_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__534D60F1" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Opportunity" />
-          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OPPOR_HAS__Volun__5441852A" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Volunteer" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__6B24EA82" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OPPOR_HAS__Volun__6C190EBB" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Volunteer" />
         </EntityType>
         <EntityType Name="tbl_Category">
           <Key>
@@ -237,7 +237,7 @@
           <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CategoryDesc" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Categ__48CFD27E" FromRole="tbl_Category" ToRole="OPPOR_HAS_CATEGORY" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Categ__68487DD7" FromRole="tbl_Category" ToRole="OPPOR_HAS_CATEGORY" />
         </EntityType>
         <EntityType Name="tbl_Opportunity">
           <Key>
@@ -261,9 +261,9 @@
           <Property Name="Oppor_IsFeatured" Type="Boolean" />
           <Property Name="Oppor_CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Oppor__47DBAE45" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_CATEGORY" />
-          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Oppor__534D60F1" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_VOLUN" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Oppor__6754599E" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_CATEGORY" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Oppor__6B24EA82" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_VOLUN" />
         </EntityType>
         <EntityType Name="tbl_User">
           <Key>
@@ -338,11 +338,11 @@
           <Property Name="VolunFlaggedInformation" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="VolunGeneralNotes" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="VolunUpdateHours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Volun__5441852A" FromRole="tbl_Volunteer" ToRole="OPPOR_HAS_VOLUN" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Volun__6C190EBB" FromRole="tbl_Volunteer" ToRole="OPPOR_HAS_VOLUN" />
         </EntityType>
-        <Association Name="FK__OPPOR_HAS__Categ__48CFD27E">
+        <Association Name="FK__OPPOR_HAS__Categ__68487DD7">
           <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -354,7 +354,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__47DBAE45">
+        <Association Name="FK__OPPOR_HAS__Oppor__6754599E">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -366,7 +366,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__534D60F1">
+        <Association Name="FK__OPPOR_HAS__Oppor__6B24EA82">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -378,7 +378,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Volun__5441852A">
+        <Association Name="FK__OPPOR_HAS__Volun__6C190EBB">
           <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -397,19 +397,19 @@
           <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" />
           <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" />
-          <AssociationSet Name="FK__OPPOR_HAS__Categ__48CFD27E" Association="Self.FK__OPPOR_HAS__Categ__48CFD27E">
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__68487DD7" Association="Self.FK__OPPOR_HAS__Categ__68487DD7">
             <End Role="tbl_Category" EntitySet="tbl_Category" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__47DBAE45" Association="Self.FK__OPPOR_HAS__Oppor__47DBAE45">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6754599E" Association="Self.FK__OPPOR_HAS__Oppor__6754599E">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__534D60F1" Association="Self.FK__OPPOR_HAS__Oppor__534D60F1">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6B24EA82" Association="Self.FK__OPPOR_HAS__Oppor__6B24EA82">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Volun__5441852A" Association="Self.FK__OPPOR_HAS__Volun__5441852A">
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__6C190EBB" Association="Self.FK__OPPOR_HAS__Volun__6C190EBB">
             <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
@@ -468,7 +468,7 @@
                 <ScalarProperty Name="Oppor_IsFeatured" ColumnName="Oppor_IsFeatured" />
                 <ScalarProperty Name="Oppor_CreatedOn" ColumnName="Oppor_CreatedOn" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -545,8 +545,8 @@
                 <ScalarProperty Name="VolunFlaggedInformation" ColumnName="VolunFlaggedInformation" />
                 <ScalarProperty Name="VolunGeneralNotes" ColumnName="VolunGeneralNotes" />
                 <ScalarProperty Name="VolunUpdateHours" ColumnName="VolunUpdateHours" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

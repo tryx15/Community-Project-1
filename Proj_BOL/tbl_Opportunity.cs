@@ -39,7 +39,7 @@ namespace Proj_BOL
         public Nullable<bool> Oppor_IsFeatured { get; set; }
         public System.DateTime Oppor_CreatedOn { get; set; }
         public Nullable<int> UserId { get; set; }
-        public string IsApproved { get; set; }
+        public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OPPOR_HAS_CATEGORY> OPPOR_HAS_CATEGORY { get; set; }
