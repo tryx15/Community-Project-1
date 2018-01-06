@@ -11,13 +11,17 @@ namespace SProj_MtoM.Areas.Admin.Controllers
     {
         private Volunteer_Bs objBs;
 
+        public ListVolunteerController()
+        {
+            objBs = new Volunteer_Bs();
+        }
 
         // GET: Admin/ListVolunteer
         public ActionResult Index(string SortOrder, string SortBy, string Page)
         {
             ViewBag.SortOrder = SortOrder;
             ViewBag.SortBy = SortBy;
-            var volunteers = objBs.GetALL();
+            var volunteers = objBs.GetALL().ToList();
 
             #region SwitchCase
             switch (SortBy)
