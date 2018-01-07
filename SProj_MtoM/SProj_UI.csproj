@@ -125,6 +125,11 @@
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Common\Views\Opportunity\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\tbl_Opportunity\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\tbl_Opportunity\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\tbl_Opportunity\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\tbl_Opportunity\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\tbl_Opportunity\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -145,6 +150,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListVolunteerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\tbl_OpportunityController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\OpportunityController.cs" />

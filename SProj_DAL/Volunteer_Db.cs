@@ -24,20 +24,20 @@ namespace SProj_DAL
         {
             return db.tbl_Volunteer.Find(Id);
         }
-        public void Insert(tbl_Volunteer user)
+        public void Insert(tbl_Volunteer volunteer)
         {
-            db.tbl_Volunteer.Add(user);
+            db.tbl_Volunteer.Add(volunteer);
             Save();
         }
         public void Delete(int Id)
         {
-            tbl_Volunteer user = db.tbl_Volunteer.Find(Id);
-            db.tbl_Volunteer.Remove(user);
+            tbl_Volunteer volunteer = db.tbl_Volunteer.Find(Id);
+            db.tbl_Volunteer.Remove(volunteer);
             Save();
         }
-        public void Update(tbl_Volunteer user)
+        public void Update(tbl_Volunteer volunteer)
         {
-            db.Entry(user).State = EntityState.Modified;
+            db.Entry(volunteer).State = EntityState.Modified;
         }
         public void Save()
         {

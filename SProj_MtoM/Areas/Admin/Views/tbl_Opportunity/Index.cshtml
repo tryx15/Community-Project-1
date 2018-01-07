@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Proj_BOL.tbl_Opportunity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Dateofevent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_ImageThumbnailUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Streetaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Streetaddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_County)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Eldersource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_Eldersourceinstitute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_RequiresBackgroundCheck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_IsFeatured)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppor_CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Dateofevent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_ImageThumbnailUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Streetaddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Streetaddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_County)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Eldersource)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_Eldersourceinstitute)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_RequiresBackgroundCheck)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_IsFeatured)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oppor_CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Oppor_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Oppor_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Oppor_Id })
+        </td>
+    </tr>
+}
+
+</table>

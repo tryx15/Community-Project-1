@@ -1,0 +1,169 @@
+﻿@model Proj_BOL.tbl_Opportunity
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_Opportunity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Dateofevent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Dateofevent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_ImageThumbnailUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_ImageThumbnailUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Streetaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Streetaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Streetaddress2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Streetaddress2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Eldersource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Eldersource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_Eldersourceinstitute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_Eldersourceinstitute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_RequiresBackgroundCheck)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_RequiresBackgroundCheck)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_IsFeatured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_IsFeatured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oppor_CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oppor_CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

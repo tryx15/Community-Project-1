@@ -43,6 +43,7 @@
     <Compile Include="CategoryBs.cs" />
     <Compile Include="Opportunity_Bs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBs.cs" />
     <Compile Include="Volunteer_Bs.cs" />
   </ItemGroup>
   <ItemGroup>
