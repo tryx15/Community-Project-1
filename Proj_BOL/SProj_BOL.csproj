@@ -78,6 +78,7 @@
     <Compile Include="tbl_Opportunity.cs">
       <DependentUpon>DB_Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_OpportunityValidation.cs" />
     <Compile Include="tbl_User.cs">
       <DependentUpon>DB_Models.tt</DependentUpon>
     </Compile>

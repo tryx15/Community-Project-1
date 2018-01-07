@@ -1,0 +1,43 @@
+﻿@model Proj_BOL.OPPOR_HAS_CATEGORY
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OPPOR_HAS_CATEGORY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Assigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Opportunity.Oppor_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Opportunity.Oppor_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

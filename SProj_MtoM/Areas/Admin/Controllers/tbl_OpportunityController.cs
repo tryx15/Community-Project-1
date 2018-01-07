@@ -14,6 +14,9 @@ namespace SProj_MtoM.Areas.Admin.Controllers
     {
         private DB_Models db = new DB_Models();
 
+       
+
+
         // GET: Admin/tbl_Opportunity
         public ActionResult Index()
         {
@@ -35,28 +38,86 @@ namespace SProj_MtoM.Areas.Admin.Controllers
             return View(tbl_Opportunity);
         }
 
+        private void PopulateAssignedCatData(tbl_Opportunity opportunity)
+        {
+            var allCategories = db.tbl_Category;
+            var opporCat = new HashSet<int>(opportunity.OPPOR_HAS_CATEGORY.Select(b => b.Category_Id));
+            var viewModelAvailable = new List<tbl_Category>();
+            var viewModelSelected = new List<tbl_Category>();
+            foreach (var cat in allCategories)
+            {
+                if (opporCat.Contains(cat.Category_Id))
+                {
+                    viewModelSelected.Add(new tbl_Category
+                    {
+                        Category_Id = cat.Category_Id,
+                        CategoryName = cat.CategoryName,
+                        //Assigned = true
+                    });
+                }
+                else
+                {
+                    viewModelAvailable.Add(new tbl_Category
+                    {
+                        Category_Id = cat.Category_Id,
+                        CategoryName = cat.CategoryName,
+                        //Assigned = false
+                    });
+                }
+            }
+
+            ViewBag.selOpts = new MultiSelectList(viewModelSelected, "Category_Id", "CategoryName");
+            ViewBag.availOpts = new MultiSelectList(viewModelAvailable, "Category_Id", "CategoryName");
+        }
+
+
+
+
+
         // GET: Admin/tbl_Opportunity/Create
         public ActionResult Create()
         {
+            var Tbl_Opportunity = new tbl_Opportunity();
+            Tbl_Opportunity.OPPOR_HAS_CATEGORY = new List<OPPOR_HAS_CATEGORY>();
+            PopulateAssignedCatData(Tbl_Opportunity);
+
             return View();
         }
+
 
         // POST: Admin/tbl_Opportunity/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Oppor_Id,Oppor_Name,Oppor_Description,Oppor_Dateofevent,Oppor_ImageThumbnailUrl,Oppor_ImageUrl,Oppor_Streetaddress,Oppor_Streetaddress2,Oppor_City,Oppor_State,Oppor_Zip,Oppor_County,Oppor_Eldersource,Oppor_Eldersourceinstitute,Oppor_RequiresBackgroundCheck,Oppor_IsFeatured,Oppor_CreatedOn,UserId,Role")] tbl_Opportunity tbl_Opportunity)
+        public ActionResult Create([Bind(Include = "Oppor_Id,Oppor_Name,Oppor_Description,Oppor_Dateofevent,Oppor_ImageThumbnailUrl,Oppor_ImageUrl,Oppor_Streetaddress,Oppor_Streetaddress2,Oppor_City,Oppor_State,Oppor_Zip,Oppor_County,Oppor_Eldersource,Oppor_Eldersourceinstitute,Oppor_RequiresBackgroundCheck,Oppor_IsFeatured,Oppor_CreatedOn,UserId,Role")] tbl_Opportunity tbl_Opportunity, string[] selectedOptions)
         {
+            if (selectedOptions != null)
+            {
+                tbl_Opportunity.OPPOR_HAS_CATEGORY = new List<OPPOR_HAS_CATEGORY>();
+                foreach (var cat in selectedOptions)
+                {
+                    var catToAdd = db.OPPOR_HAS_CATEGORY.Find(int.Parse(cat));
+
+                   // var oPPOR_HAS_CATEGORY = db.OPPOR_HAS_CATEGORY.Include(o => o.tbl_Category).Include(o => o.tbl_Opportunity);
+
+                    tbl_Opportunity.OPPOR_HAS_CATEGORY.Add(catToAdd);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 db.tbl_Opportunity.Add(tbl_Opportunity);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            //ViewBag.TeamID = new SelectList(db.Teams, "ID", "TeamName", player.TeamID);
+            PopulateAssignedCatData(tbl_Opportunity);
             return View(tbl_Opportunity);
         }
+
+      
+
 
         // GET: Admin/tbl_Opportunity/Edit/5
         public ActionResult Edit(int? id)

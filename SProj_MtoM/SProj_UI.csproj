@@ -121,6 +121,7 @@
     <Content Include="Areas\Admin\Views\ListVolunteer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\multisel.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Common\Views\Opportunity\Index.cshtml" />
@@ -130,6 +131,11 @@
     <Content Include="Areas\Admin\Views\tbl_Opportunity\Details.cshtml" />
     <Content Include="Areas\Admin\Views\tbl_Opportunity\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\tbl_Opportunity\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OPPOR_HAS_CATEGORY\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\OPPOR_HAS_CATEGORY\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\OPPOR_HAS_CATEGORY\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OPPOR_HAS_CATEGORY\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OPPOR_HAS_CATEGORY\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -150,6 +156,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListVolunteerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OPPOR_HAS_CATEGORYController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbl_OpportunityController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />

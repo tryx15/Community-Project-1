@@ -9,11 +9,11 @@ namespace SProj_MtoM.Areas.Admin.Controllers
 {
     public class ListVolunteerController : Controller
     {
-        private Volunteer_Bs objBs;
+        private AdminBs objBs; //Volunteer_Bs changed to AdminBs since it handles the Admin functions (See AdminBs for reference)
 
         public ListVolunteerController()
         {
-            objBs = new Volunteer_Bs();
+            objBs = new AdminBs();
         }
 
         // GET: Admin/ListVolunteer
@@ -21,7 +21,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
         {
             ViewBag.SortOrder = SortOrder;
             ViewBag.SortBy = SortBy;
-            var volunteers = objBs.GetALL().Where(x => x.IsApproved == "A").ToList();
+            var volunteers = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == "A").ToList();
 
 
             #region SwitchCase
@@ -78,7 +78,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
             }
             #endregion
 
-            ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Count() / 10.0);
+            ViewBag.TotalPages = Math.Ceiling(objBs.volunteer_Bs.GetALL().Count() / 10.0);
             int page = int.Parse(Page == null ? "1" : Page);
             ViewBag.Page = page;
             volunteers = volunteers.Skip((page - 1) * 10).Take(10).ToList();
