@@ -9,11 +9,11 @@ namespace SProj_MtoM.Areas.Admin.Controllers
 {
     public class ListCategoryController : Controller
     {
-        private CategoryBs objBs;
+        private AdminBs objBs;
 
         public ListCategoryController()
         {
-            objBs = new CategoryBs();
+            objBs = new AdminBs();
         }
        
         // GET: Admin/ListCategory
@@ -21,7 +21,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
         {
             ViewBag.SortOrder = SortOrder;
             ViewBag.SortBy = SortBy;
-            var categories = objBs.GetALL().ToList();
+            var categories = objBs.categoryBs.GetALL().ToList();
 
             switch (SortBy)
             {
@@ -60,7 +60,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
                     break;
             }
 
-            ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Count() / 10.0);
+            ViewBag.TotalPages = Math.Ceiling(objBs.categoryBs.GetALL().Count() / 10.0);
             int page = int.Parse(Page == null ? "1" : Page);
             ViewBag.Page = page;
             categories = categories.Skip((page - 1) * 10).Take(10).ToList();

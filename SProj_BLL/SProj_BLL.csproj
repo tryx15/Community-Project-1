@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="AdminBs.cs" />
     <Compile Include="CategoryBs.cs" />
+    <Compile Include="CommonBs.cs" />
     <Compile Include="Opportunity_Bs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityBs.cs" />
     <Compile Include="UserBs.cs" />
     <Compile Include="Volunteer_Bs.cs" />
   </ItemGroup>

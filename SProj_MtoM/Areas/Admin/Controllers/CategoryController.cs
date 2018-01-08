@@ -11,11 +11,11 @@ namespace SProj_MtoM.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
 
-        private CategoryBs objBs;
+        private AdminBs objBs;
 
         public CategoryController()
         {
-            objBs = new CategoryBs();
+            objBs = new AdminBs();
         }
 
         // GET: Admin/Category
@@ -31,7 +31,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    objBs.Insert(category);
+                    objBs.categoryBs.Insert(category);
                     TempData["Msg"] = "Created Successfully";
                     return RedirectToAction("Index");
                 }
