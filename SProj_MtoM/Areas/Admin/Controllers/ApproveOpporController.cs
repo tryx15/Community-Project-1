@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Admin.Controllers
 {
-    public class ApproveOpporController : Controller
+    public class ApproveOpporController : BaseAdminController
     {
         // GET: Admin/ApproveOppor
         public ActionResult Index()

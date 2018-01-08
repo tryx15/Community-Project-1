@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Admin.Controllers
 {
-    public class ListVolunteerController : Controller
+    public class ListVolunteerController : BaseAdminController
     {
-        private AdminBs objBs; //Volunteer_Bs changed to AdminBs since it handles the Admin functions (See AdminBs for reference)
+        //private AdminBs objBs; //Volunteer_Bs changed to AdminBs since it handles the Admin functions (See AdminBs for reference)
 
-        public ListVolunteerController()
-        {
-            objBs = new AdminBs();
-        }
+        //public ListVolunteerController()
+        //{
+        //    objBs = new AdminBs();
+        //}
 
         // GET: Admin/ListVolunteer
         public ActionResult Index(string SortOrder, string SortBy, string Page)

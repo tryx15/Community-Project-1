@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBs.cs" />
+    <Compile Include="BaseBs.cs" />
     <Compile Include="CategoryBs.cs" />
     <Compile Include="CommonBs.cs" />
     <Compile Include="Opportunity_Bs.cs" />
@@ -58,6 +59,9 @@
       <Project>{19f20b78-8df5-4d22-9af2-4564ca4c81e1}</Project>
       <Name>SProj_DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagramBs.dgml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

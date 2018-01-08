@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Admin.Controllers
 {
-    public class ListCategoryController : Controller
+    public class ListCategoryController : BaseAdminController
     {
-        private AdminBs objBs;
+        //private AdminBs objBs;
 
-        public ListCategoryController()
-        {
-            objBs = new AdminBs();
-        }
+        //public ListCategoryController()
+        //{
+        //    objBs = new AdminBs();
+        //}
        
         // GET: Admin/ListCategory
         public ActionResult Index(string SortOrder, string SortBy, string Page)
@@ -73,7 +73,7 @@ namespace SProj_MtoM.Areas.Admin.Controllers
 
             try
             {
-                objBs.Delete(id);
+                objBs.categoryBs.Delete(id);
                 TempData["Msg"] = "Deleted Successfully";
                 return RedirectToAction("Index");
             }

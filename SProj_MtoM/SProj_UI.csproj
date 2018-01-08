@@ -153,12 +153,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ApproveOpporController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListVolunteerController.cs" />
     <Compile Include="Areas\Admin\Controllers\OPPOR_HAS_CATEGORYController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbl_OpportunityController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
+    <Compile Include="Areas\Common\Controllers\BaseCommonController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\OpportunityController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
@@ -184,7 +186,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\BaseAdmin\" />
     <Folder Include="Areas\Common\Models\" />
+    <Folder Include="Areas\Common\Views\BaseCommon\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Areas\Security\Controllers\" />
     <Folder Include="Areas\Security\Models\" />
