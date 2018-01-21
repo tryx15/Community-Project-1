@@ -59,21 +59,21 @@ namespace SProj_MtoM.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult ApproveOrRejectALL(List<int> Ids, String Status, string CurrentStatus)
+        public void ApproveOrRejectALL(List<int> Ids, String Status, string CurrentStatus)
         {
-            try
-            {
-                objBs.ApproveOrReject(Ids, Status);
-                TempData["Msg"] = "Operation Successfully";
-                var volunteers = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == CurrentStatus).ToList();
-                return PartialView("pv_ApproveURLs", volunteers);
-            }
-            catch (Exception e1)
-            {
-                TempData["Msg"] = "Operation Failed" + e1.Message;
-                var volunteers = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == CurrentStatus).ToList();
-                return PartialView("pv_ApproveURLs", volunteers);
-            }
+            //try
+            //{
+            //    objBs.ApproveOrReject(Ids, Status);
+            //    TempData["Msg"] = "Operation Successfully";
+            //    var volunteers = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == CurrentStatus).ToList();
+            //    return PartialView("pv_ApproveURLs", volunteers);
+            //}
+            //catch (Exception e1)
+            //{
+            //    TempData["Msg"] = "Operation Failed" + e1.Message;
+            //    var volunteers = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == CurrentStatus).ToList();
+            //    return PartialView("pv_ApproveURLs", volunteers);
+            //}
 
         }
 

@@ -1,3 +1,4 @@
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\obj\Debug\SProj_UI.csproj.CoreCompileInputs.cache
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SqlServerTypes\x64\msvcr120.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SqlServerTypes\x86\msvcr120.dll
@@ -32,8 +33,6 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Microsoft.We
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Newtonsoft.Json.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Proj_BOL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\SProj_BLL.dll
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Net.Http.dll
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Net.Http.WebRequest.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Web.Helpers.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Web.Mvc.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Web.Optimization.dll
@@ -99,8 +98,6 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\EntityFramew
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Microsoft.Web.WebPages.OAuth.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\Newtonsoft.Json.xml
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Net.Http.xml
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Net.Http.WebRequest.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\System.Web.Optimization.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\WebMatrix.Data.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\WebMatrix.WebData.xml
@@ -181,6 +178,5 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\ru\Microsoft
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\obj\Debug\SProj_UI.csprojResolveAssemblyReference.cache
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\obj\Debug\SProj_UI.csproj.CoreCompileInputs.cache
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\obj\Debug\SProj_MtoM.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\SProj_MtoM\obj\Debug\SProj_MtoM.pdb

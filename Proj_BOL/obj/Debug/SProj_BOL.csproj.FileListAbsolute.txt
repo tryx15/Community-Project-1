@@ -1,3 +1,4 @@
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\obj\Debug\SProj_BOL.csproj.CoreCompileInputs.cache
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\Proj_BOL.dll.config
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\Proj_BOL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\Proj_BOL.pdb
@@ -5,7 +6,5 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\EntityFr
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\EntityFramework.SqlServer.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\EntityFramework.xml
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\bin\Debug\EntityFramework.SqlServer.xml
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\obj\Debug\SProj_BOL.csprojResolveAssemblyReference.cache
-E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\obj\Debug\SProj_BOL.csproj.CoreCompileInputs.cache
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\obj\Debug\Proj_BOL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM\Proj_BOL\obj\Debug\Proj_BOL.pdb

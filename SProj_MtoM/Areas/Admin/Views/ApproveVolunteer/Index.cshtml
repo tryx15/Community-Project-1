@@ -4,7 +4,53 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script>
+
+    $(document).ready(function () {
+
+        $("#selectall").click(function (event) {  //on click
+            if (this.checked) { // check select status
+                $('.ckb').each(function () { //loop through each checkbox
+                    this.checked = true;  //select all checkboxes with class "checkbox1"
+                });
+            } else {
+                $('.ckb').each(function () { //loop through each checkbox
+                    this.checked = false; //deselect all checkboxes with class "checkbox1"
+                });
+            }
+        });
+
+    });
+
+    $("#Approve").click(function () {
+            checkedIds = $(".ckb").filter(":checked").map(function () { return this.id; });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ApproveOrRejectAll","ApproveVolunteer")",
+                traditional: true,
+                data: { Ids: checkedIds.toArray(), Status: "A" },//, CurrentStatus: "@ViewBag.Status" },
+                success: successFunc,
+                error: errorFunc
+            });
+
+            function successFunc(data, status) {
+               // alert(data);
+                Location.reload();
+                //$("#Data").html(data);
+                //BindSelectAll();
+            }
+
+            function errorFunc() {
+                alert('error');
+            }
+
+        });
+
+
+
+
     function ConfirmApprove() {
         return confirm('Are you sure you want to Approve?');
     }
@@ -17,36 +63,37 @@
 
 <h2>Manage Volunteers</h2>
 @if (TempData["Msg"] != null)
-{<h4>
+{<div class="alert alert-dismissable alert-info">
+    <button type="button" class="close" data-dismiss="alert">x</button>
     @TempData["Msg"].ToString()  
-  </h4>}
+  </div>}
 
-<h4>
+<ul class="nav nav-pills">
 @if (ViewBag.Status == "P")
 {
-    <b>@Html.ActionLink("Pending Volunteers", "Index", new { Status = "P" })</b>
+    <li class="active">@Html.ActionLink("Pending Volunteers", "Index", new { Status = "P" })</li>
 }
 else
 {
-    <b> @Html.ActionLink("Pending Volunteers", "Index", new { Status = "P" })</b>
+    <li> @Html.ActionLink("Pending Volunteers", "Index", new { Status = "P" })</li>
 }
 @if (ViewBag.Status == "A")
 {
-    <b>@Html.ActionLink("Approved Volunteers", "Index", new { Status = "A" }) </b>
+    <li class="active">@Html.ActionLink("Approved Volunteers", "Index", new { Status = "A" }) </li>
 }
 else
 {
-    <b>@Html.ActionLink("Approved Volunteers", "Index", new { Status = "A" })</b>
+    <li>@Html.ActionLink("Approved Volunteers", "Index", new { Status = "A" })</li>
 }
 @if (ViewBag.Status == "R")
 {
-    <b>@Html.ActionLink("Rejected Volunteers", "Index", new { Status = "R" }) </b>
+    <li class="active">@Html.ActionLink("Rejected Volunteers", "Index", new { Status = "R" }) </li>
 }
 else
 {
-    <b>@Html.ActionLink("Rejected Volunteers", "Index", new { Status = "R" })</b>
+    <li>@Html.ActionLink("Rejected Volunteers", "Index", new { Status = "R" })</li>
 }
-</h4>
+</ul>
 @*<div id="Data">
     @Html.Partial("pv_ApproveURLs", Model)
 </div>*@
@@ -54,14 +101,14 @@ else
 <table class="table table-responsive table-bordered table-striped table-hover">
     <tr class="info">
 
-        <th>Approve/Reject</th>
+        <th>@Html.CheckBox("selectall")</th>
         <th>
             @Html.DisplayNameFor(model => model.Volun_Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsApproved)
         </th>
-        
+
         <th>
             @Html.DisplayNameFor(model => model.VolunFname)
         </th>
@@ -245,204 +292,201 @@ else
 
     </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink("Approve", "Approve", new { id = item.Volun_Id}, new { onclick="return ConfirmApprove();"}) |
-                    @Html.ActionLink("Reject", "Reject", new { id = item.Volun_Id }, new { onclick = "return ConfirmReject();" })
-                </td>
-                <td>
-                    @Html.CheckBox(item.Volun_Id.ToString(), false, new { @class = "ckb", Id = item.Volun_Id })
-                </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.CheckBox(item.Volun_Id.ToString(), false, new { @class = "ckb", Id = item.Volun_Id })
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsApproved)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunFname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunLname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunEmail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunDateofbirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunStreetaddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunStreetaddress2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunCity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunState)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunZip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.County)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableMonday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableMondayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableMondayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableMondayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableTuesday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableWednesday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableThursday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableThursdayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableThursdayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableThursdayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableFriday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableFridayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableFridayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableFridayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSaturday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSunday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSundayMorning)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSundayAfternoon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAvailableSundayEvening)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VoluntNutrition)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunTrainingFacilitator)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunAdmin)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunGeneral)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunHealthyliving)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunDiseaseManagement)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunFallsPrevention)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunCaregiver)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunMentalWellness)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunEvents)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunSocialMedia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunOtherInterest)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunBackgroundCheckRequired)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunBackgroundCheckCompletedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunBackgroundCheckExpiresOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunActivitiesParticipated)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunMarkVolunteer)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunFlagged)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunFlaggedInformation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunGeneralNotes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolunUpdateHours)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Password)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunFname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunLname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunDateofbirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunStreetaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunStreetaddress2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.County)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableMonday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableMondayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableMondayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableMondayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableTuesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableTuesdayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableWednesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableWednesdayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableThursday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableThursdayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableThursdayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableThursdayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableFriday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableFridayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableFridayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableFridayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSaturday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSaturdayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSunday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSundayMorning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSundayAfternoon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAvailableSundayEvening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoluntNutrition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunTrainingFacilitator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunGeneral)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunHealthyliving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunDiseaseManagement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunFallsPrevention)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunCaregiver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunMentalWellness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunEvents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunSocialMedia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunOtherInterest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunBackgroundCheckRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunBackgroundCheckCompletedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunBackgroundCheckExpiresOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunActivitiesParticipated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunMarkVolunteer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunFlagged)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunFlaggedInformation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunGeneralNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunUpdateHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
 
 
-            </tr>
-        }
+        </tr>
+    }
+    <input type="button" id="Approve" value="Approve" class="btn btn-primary" /> |
+    <input type="button" id="Reject" value="Reject" class="btn btn-primary" />
 
-    </table>
-<input type="button" id="Approve" value="Approve" class="btn btn-primary" /> | <input type="button" id="Reject" value="Reject" class="btn btn-primary" />
+</table>
