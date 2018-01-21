@@ -188,6 +188,7 @@
     <Content Include="Areas\Admin\Views\ListVolunteer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\multisel.js" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -37,6 +37,7 @@ namespace SProj_BLL
         public void Update(tbl_Volunteer user)
         {
             objDb.Update(user);
+            objDb.Save();
         }
     }
 }
