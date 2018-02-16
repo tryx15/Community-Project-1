@@ -1,4 +1,5 @@
-﻿using SProj_BLL;
+﻿using Microsoft.Reporting.WebForms;
+using SProj_BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -84,6 +85,34 @@ namespace SProj_MtoM.Areas.Admin.Controllers
             volunteers = volunteers.Skip((page - 1) * 10).Take(10).ToList();
 
             return View(volunteers);
+        }
+
+       
+        public FileResult ExportTo(string ReportType)
+        {
+            LocalReport localReport = new LocalReport();
+            localReport.ReportPath = Server.MapPath("~/Reports/VoluntteerReport.rdlc");
+
+            ReportDataSource reportDataSource = new ReportDataSource();
+            reportDataSource.Name = "Volunteer_rdlc_DataSet";
+            reportDataSource.Value = objBs.volunteer_Bs.GetALL().Where(x => x.IsApproved == "A").ToList();
+
+            localReport.DataSources.Add(reportDataSource);
+
+            string reportType = ReportType;
+            string mimeType;
+            string encoding;
+            string fileNameExtension = (ReportType == "Excel") ? "xlsx" : (ReportType == "Word" ? "doc" : "pdf");
+            Warning[] warnings;
+            string[] streams;
+            byte[] renderedBytes;
+
+            renderedBytes = localReport.Render(reportType, "", out mimeType, out encoding,
+                                                out fileNameExtension, out streams, out warnings);
+            Response.AddHeader("content-disposition", "attachment; filename=Volunteers." + fileNameExtension);
+
+            return File(renderedBytes, fileNameExtension);
+
         }
     }
 }

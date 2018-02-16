@@ -6,14 +6,24 @@
 }
 
 <h2>Volunteer List</h2>
-
+<div class="pull-left">
+    <div class="btn-group ">
+        <button type="button" class="btn btn-primary">Export To</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Excel", "ExportTo", new { ReportType = "Excel" })</li>
+            <li>@Html.ActionLink("PDF", "ExportTo", new { ReportType = "PDF" })</li>
+            <li>@Html.ActionLink("Word", "ExportTo", new { ReportType = "Word" })</li>
+        </ul>
+    </div>
+</div>
 <table class="table table-responsive table-bordered table-striped table-hover">
     <tr class="info">
         <th>
             @Html.ActionLink("IsApproved", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "IsApproved", page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.DisplayNameFor(model=>model.VolunFname)
+            @Html.DisplayNameFor(model => model.VolunFname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.VolunLname)
@@ -23,7 +33,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.VolunDateofbirth)
-        </th>       
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.VolunStreetaddress)
         </th>
@@ -193,7 +203,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Password)
         </th>
-        
+
     </tr>
 
     @foreach (var item in Model)
@@ -382,8 +392,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
-           
-     
+
+
         </tr>
     }
 
