@@ -1,0 +1,61 @@
+﻿@model Proj_BOL.tbl_Opportunity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model == null)
+{
+    <p>That is not a valid item.</p>
+}
+else
+{
+    <div class="detailtitle">
+        <span class="opportunityname">@Model.Oppor_Name</span>
+        <br /><span class="dateOfEvent">@Model.Oppor_Dateofevent</span>
+    </div>
+
+
+    <div class="container marginTop">
+        <div class="row">
+            <div class="card">
+                <div class="text-center view overlay hm-white-slight">
+                    @*<img src="@Model.ImageData" class="img-fluid" alt="">*@
+                    @if (Model.ImageData != null)
+    {
+                <div class="pull-left" style="margin-right: 10px">
+                    <img class="img-fluid" alt="" width="800" height="500"
+                         src="@Url.Action("GetImage", "Opportunity",new { Model.Oppor_Id })" />
+                </div>
+}
+                    <a href="#">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">@Model.Oppor_Name</h4>
+                    <!--Text-->
+                    <p class="">@Model.Oppor_Description.</p>
+                    <p class="btn btn-group pull-right">
+                        @using (Html.BeginForm("AddToBasket", "Basket"))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="pull-right">
+                                <a>@Html.ActionLink("Show all Opportunities", "Index", "Opportunity", null, new { @class = "btn btn-default" }) </a>
+                                <input type="hidden" name="Oppor_Id" value="@Model.Oppor_Id" />
+                                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                                <input type="submit" class="btn btn-success" value="Apply now" />
+                            </div>
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

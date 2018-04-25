@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ADDED_IMAGESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BasketLines">
+          <Key>
+            <PropertyRef Name="BasketLines_ID" />
+          </Key>
+          <Property Name="BasketLines_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasketID" Type="nvarchar(max)" />
+          <Property Name="Oppor_Id" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="OPPOR_HAS_CATEGORY">
           <Key>
             <PropertyRef Name="Oppor_Id" />
@@ -23,6 +33,17 @@
           <Property Name="Oppor_Id" Type="int" Nullable="false" />
           <Property Name="Volun_Id" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="OrderLines">
+          <Key>
+            <PropertyRef Name="OrderLines_ID" />
+          </Key>
+          <Property Name="OrderLines_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Volun_Id" Type="int" Nullable="false" />
+          <Property Name="Oppor_Id" Type="int" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Oppor_Name" Type="nvarchar(max)" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="tbl_Category">
           <Key>
             <PropertyRef Name="Category_Id" />
@@ -39,8 +60,8 @@
           <Property Name="Oppor_Name" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="Oppor_Description" Type="varchar" MaxLength="5000" />
           <Property Name="Oppor_Dateofevent" Type="date" Nullable="false" />
-          <Property Name="Oppor_ImageThumbnailUrl" Type="varchar" MaxLength="100" />
-          <Property Name="Oppor_ImageUrl" Type="varchar" MaxLength="100" />
+          <Property Name="ImageData" Type="varbinary(max)" />
+          <Property Name="ImageMimeType" Type="varchar" MaxLength="50" />
           <Property Name="Oppor_Streetaddress" Type="varchar" MaxLength="100" />
           <Property Name="Oppor_Streetaddress2" Type="nvarchar" MaxLength="100" />
           <Property Name="Oppor_City" Type="varchar" MaxLength="100" />
@@ -69,7 +90,7 @@
             <PropertyRef Name="Volun_Id" />
           </Key>
           <Property Name="Volun_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VolunFname" Type="varchar" MaxLength="100" />
+          <Property Name="VolunFname" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="VolunLname" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="VolunEmail" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="VolunDateofbirth" Type="date" Nullable="false" />
@@ -128,10 +149,23 @@
           <Property Name="VolunFlaggedInformation" Type="varchar" MaxLength="2000" />
           <Property Name="VolunGeneralNotes" Type="nvarchar" MaxLength="3000" />
           <Property Name="VolunUpdateHours" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="IsApproved" Type="varchar" MaxLength="1" />
+          <Property Name="DateCreated" Type="datetime2" Precision="7" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="IsApproved" Type="varchar" MaxLength="1" />
         </EntityType>
-        <Association Name="FK__OPPOR_HAS__Categ__68487DD7">
+        <Association Name="FK__BasketLin__Oppor__398D8EEE">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="BasketLines" Type="Self.BasketLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="BasketLines">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Categ__2F10007B">
           <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__6754599E">
+        <Association Name="FK__OPPOR_HAS__Oppor__2E1BDC42">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__6B24EA82">
+        <Association Name="FK__OPPOR_HAS__Oppor__31EC6D26">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Volun__6C190EBB">
+        <Association Name="FK__OPPOR_HAS__Volun__32E0915F">
           <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,35 +213,84 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <Association Name="FK__OrderLine__Oppor__36B12243">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="0..1" />
+          <End Role="OrderLines" Type="Self.OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderLine__Volun__35BCFE0A">
+          <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
+          <End Role="OrderLines" Type="Self.OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Volunteer">
+              <PropertyRef Name="Volun_Id" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="Volun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ADDED_IMAGESModelStoreContainer">
+          <EntitySet Name="BasketLines" EntityType="Self.BasketLines" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OPPOR_HAS_CATEGORY" EntityType="Self.OPPOR_HAS_CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OPPOR_HAS_VOLUN" EntityType="Self.OPPOR_HAS_VOLUN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderLines" EntityType="Self.OrderLines" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__OPPOR_HAS__Categ__68487DD7" Association="Self.FK__OPPOR_HAS__Categ__68487DD7">
+          <AssociationSet Name="FK__BasketLin__Oppor__398D8EEE" Association="Self.FK__BasketLin__Oppor__398D8EEE">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="BasketLines" EntitySet="BasketLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__2F10007B" Association="Self.FK__OPPOR_HAS__Categ__2F10007B">
             <End Role="tbl_Category" EntitySet="tbl_Category" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6754599E" Association="Self.FK__OPPOR_HAS__Oppor__6754599E">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__2E1BDC42" Association="Self.FK__OPPOR_HAS__Oppor__2E1BDC42">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6B24EA82" Association="Self.FK__OPPOR_HAS__Oppor__6B24EA82">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__31EC6D26" Association="Self.FK__OPPOR_HAS__Oppor__31EC6D26">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Volun__6C190EBB" Association="Self.FK__OPPOR_HAS__Volun__6C190EBB">
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__32E0915F" Association="Self.FK__OPPOR_HAS__Volun__32E0915F">
             <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderLine__Oppor__36B12243" Association="Self.FK__OrderLine__Oppor__36B12243">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderLine__Volun__35BCFE0A" Association="Self.FK__OrderLine__Volun__35BCFE0A">
+            <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ADDED_IMAGESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BasketLine">
+          <Key>
+            <PropertyRef Name="BasketLines_ID" />
+          </Key>
+          <Property Name="BasketLines_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasketID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__BasketLin__Oppor__398D8EEE" FromRole="BasketLines" ToRole="tbl_Opportunity" />
+        </EntityType>
         <EntityType Name="OPPOR_HAS_CATEGORY">
           <Key>
             <PropertyRef Name="Oppor_Id" />
@@ -216,8 +299,8 @@
           <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
           <Property Name="Category_Id" Type="Int32" Nullable="false" />
           <Property Name="Assigned" Type="Boolean" />
-          <NavigationProperty Name="tbl_Category" Relationship="Self.FK__OPPOR_HAS__Categ__68487DD7" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Category" />
-          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__6754599E" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Category" Relationship="Self.FK__OPPOR_HAS__Categ__2F10007B" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Category" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__2E1BDC42" FromRole="OPPOR_HAS_CATEGORY" ToRole="tbl_Opportunity" />
         </EntityType>
         <EntityType Name="OPPOR_HAS_VOLUN">
           <Key>
@@ -227,8 +310,21 @@
           <Property Name="OpporVolun_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Oppor_Id" Type="Int32" Nullable="false" />
           <Property Name="Volun_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__6B24EA82" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Opportunity" />
-          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OPPOR_HAS__Volun__6C190EBB" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Volunteer" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OPPOR_HAS__Oppor__31EC6D26" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OPPOR_HAS__Volun__32E0915F" FromRole="OPPOR_HAS_VOLUN" ToRole="tbl_Volunteer" />
+        </EntityType>
+        <EntityType Name="OrderLine">
+          <Key>
+            <PropertyRef Name="OrderLines_ID" />
+          </Key>
+          <Property Name="OrderLines_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Volun_Id" Type="Int32" Nullable="false" />
+          <Property Name="Oppor_Id" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Oppor_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_Opportunity" Relationship="Self.FK__OrderLine__Oppor__36B12243" FromRole="OrderLines" ToRole="tbl_Opportunity" />
+          <NavigationProperty Name="tbl_Volunteer" Relationship="Self.FK__OrderLine__Volun__35BCFE0A" FromRole="OrderLines" ToRole="tbl_Volunteer" />
         </EntityType>
         <EntityType Name="tbl_Category">
           <Key>
@@ -237,7 +333,7 @@
           <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CategoryDesc" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Categ__68487DD7" FromRole="tbl_Category" ToRole="OPPOR_HAS_CATEGORY" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Categ__2F10007B" FromRole="tbl_Category" ToRole="OPPOR_HAS_CATEGORY" />
         </EntityType>
         <EntityType Name="tbl_Opportunity">
           <Key>
@@ -247,8 +343,8 @@
           <Property Name="Oppor_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Oppor_Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
           <Property Name="Oppor_Dateofevent" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Oppor_ImageThumbnailUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Oppor_ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Oppor_Streetaddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Oppor_Streetaddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Oppor_City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -262,8 +358,10 @@
           <Property Name="Oppor_CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Oppor__6754599E" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_CATEGORY" />
-          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Oppor__6B24EA82" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_VOLUN" />
+          <NavigationProperty Name="BasketLines" Relationship="Self.FK__BasketLin__Oppor__398D8EEE" FromRole="tbl_Opportunity" ToRole="BasketLines" />
+          <NavigationProperty Name="OPPOR_HAS_CATEGORY" Relationship="Self.FK__OPPOR_HAS__Oppor__2E1BDC42" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_CATEGORY" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Oppor__31EC6D26" FromRole="tbl_Opportunity" ToRole="OPPOR_HAS_VOLUN" />
+          <NavigationProperty Name="OrderLines" Relationship="Self.FK__OrderLine__Oppor__36B12243" FromRole="tbl_Opportunity" ToRole="OrderLines" />
         </EntityType>
         <EntityType Name="tbl_User">
           <Key>
@@ -279,7 +377,7 @@
             <PropertyRef Name="Volun_Id" />
           </Key>
           <Property Name="Volun_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="VolunFname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VolunFname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="VolunLname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="VolunEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="VolunDateofbirth" Type="DateTime" Nullable="false" Precision="0" />
@@ -338,11 +436,25 @@
           <Property Name="VolunFlaggedInformation" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="VolunGeneralNotes" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="VolunUpdateHours" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="7" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Volun__6C190EBB" FromRole="tbl_Volunteer" ToRole="OPPOR_HAS_VOLUN" />
+          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OPPOR_HAS_VOLUN" Relationship="Self.FK__OPPOR_HAS__Volun__32E0915F" FromRole="tbl_Volunteer" ToRole="OPPOR_HAS_VOLUN" />
+          <NavigationProperty Name="OrderLines" Relationship="Self.FK__OrderLine__Volun__35BCFE0A" FromRole="tbl_Volunteer" ToRole="OrderLines" />
         </EntityType>
-        <Association Name="FK__OPPOR_HAS__Categ__68487DD7">
+        <Association Name="FK__BasketLin__Oppor__398D8EEE">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
+          <End Role="BasketLines" Type="Self.BasketLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="BasketLines">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPPOR_HAS__Categ__2F10007B">
           <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -354,7 +466,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__6754599E">
+        <Association Name="FK__OPPOR_HAS__Oppor__2E1BDC42">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_CATEGORY" Type="Self.OPPOR_HAS_CATEGORY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -366,7 +478,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Oppor__6B24EA82">
+        <Association Name="FK__OPPOR_HAS__Oppor__31EC6D26">
           <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -378,7 +490,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OPPOR_HAS__Volun__6C190EBB">
+        <Association Name="FK__OPPOR_HAS__Volun__32E0915F">
           <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
           <End Role="OPPOR_HAS_VOLUN" Type="Self.OPPOR_HAS_VOLUN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -390,28 +502,66 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__OrderLine__Oppor__36B12243">
+          <End Role="tbl_Opportunity" Type="Self.tbl_Opportunity" Multiplicity="0..1" />
+          <End Role="OrderLines" Type="Self.OrderLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Opportunity">
+              <PropertyRef Name="Oppor_Id" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="Oppor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderLine__Volun__35BCFE0A">
+          <End Role="tbl_Volunteer" Type="Self.tbl_Volunteer" Multiplicity="1" />
+          <End Role="OrderLines" Type="Self.OrderLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Volunteer">
+              <PropertyRef Name="Volun_Id" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="Volun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DB_Models" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BasketLines" EntityType="Self.BasketLine" />
           <EntitySet Name="OPPOR_HAS_CATEGORY" EntityType="Self.OPPOR_HAS_CATEGORY" />
           <EntitySet Name="OPPOR_HAS_VOLUN" EntityType="Self.OPPOR_HAS_VOLUN" />
+          <EntitySet Name="OrderLines" EntityType="Self.OrderLine" />
           <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" />
           <EntitySet Name="tbl_Opportunity" EntityType="Self.tbl_Opportunity" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" />
           <EntitySet Name="tbl_Volunteer" EntityType="Self.tbl_Volunteer" />
-          <AssociationSet Name="FK__OPPOR_HAS__Categ__68487DD7" Association="Self.FK__OPPOR_HAS__Categ__68487DD7">
+          <AssociationSet Name="FK__BasketLin__Oppor__398D8EEE" Association="Self.FK__BasketLin__Oppor__398D8EEE">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="BasketLines" EntitySet="BasketLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPPOR_HAS__Categ__2F10007B" Association="Self.FK__OPPOR_HAS__Categ__2F10007B">
             <End Role="tbl_Category" EntitySet="tbl_Category" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6754599E" Association="Self.FK__OPPOR_HAS__Oppor__6754599E">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__2E1BDC42" Association="Self.FK__OPPOR_HAS__Oppor__2E1BDC42">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_CATEGORY" EntitySet="OPPOR_HAS_CATEGORY" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Oppor__6B24EA82" Association="Self.FK__OPPOR_HAS__Oppor__6B24EA82">
+          <AssociationSet Name="FK__OPPOR_HAS__Oppor__31EC6D26" Association="Self.FK__OPPOR_HAS__Oppor__31EC6D26">
             <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
           </AssociationSet>
-          <AssociationSet Name="FK__OPPOR_HAS__Volun__6C190EBB" Association="Self.FK__OPPOR_HAS__Volun__6C190EBB">
+          <AssociationSet Name="FK__OPPOR_HAS__Volun__32E0915F" Association="Self.FK__OPPOR_HAS__Volun__32E0915F">
             <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
             <End Role="OPPOR_HAS_VOLUN" EntitySet="OPPOR_HAS_VOLUN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderLine__Oppor__36B12243" Association="Self.FK__OrderLine__Oppor__36B12243">
+            <End Role="tbl_Opportunity" EntitySet="tbl_Opportunity" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderLine__Volun__35BCFE0A" Association="Self.FK__OrderLine__Volun__35BCFE0A">
+            <End Role="tbl_Volunteer" EntitySet="tbl_Volunteer" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -419,9 +569,20 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DB_Models">
+        <EntityContainerMapping StorageEntityContainer="ADDED_IMAGESModelStoreContainer" CdmEntityContainer="DB_Models">
+          <EntitySetMapping Name="BasketLines">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.BasketLine">
+              <MappingFragment StoreEntitySet="BasketLines">
+                <ScalarProperty Name="BasketLines_ID" ColumnName="BasketLines_ID" />
+                <ScalarProperty Name="BasketID" ColumnName="BasketID" />
+                <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="OPPOR_HAS_CATEGORY">
-            <EntityTypeMapping TypeName="Model.OPPOR_HAS_CATEGORY">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.OPPOR_HAS_CATEGORY">
               <MappingFragment StoreEntitySet="OPPOR_HAS_CATEGORY">
                 <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
                 <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
@@ -430,7 +591,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OPPOR_HAS_VOLUN">
-            <EntityTypeMapping TypeName="Model.OPPOR_HAS_VOLUN">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.OPPOR_HAS_VOLUN">
               <MappingFragment StoreEntitySet="OPPOR_HAS_VOLUN">
                 <ScalarProperty Name="OpporVolun_ID" ColumnName="OpporVolun_ID" />
                 <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
@@ -438,8 +599,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="OrderLines">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.OrderLine">
+              <MappingFragment StoreEntitySet="OrderLines">
+                <ScalarProperty Name="OrderLines_ID" ColumnName="OrderLines_ID" />
+                <ScalarProperty Name="Volun_Id" ColumnName="Volun_Id" />
+                <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Oppor_Name" ColumnName="Oppor_Name" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_Category">
-            <EntityTypeMapping TypeName="Model.tbl_Category">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.tbl_Category">
               <MappingFragment StoreEntitySet="tbl_Category">
                 <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -448,14 +621,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Opportunity">
-            <EntityTypeMapping TypeName="Model.tbl_Opportunity">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.tbl_Opportunity">
               <MappingFragment StoreEntitySet="tbl_Opportunity">
                 <ScalarProperty Name="Oppor_Id" ColumnName="Oppor_Id" />
                 <ScalarProperty Name="Oppor_Name" ColumnName="Oppor_Name" />
                 <ScalarProperty Name="Oppor_Description" ColumnName="Oppor_Description" />
                 <ScalarProperty Name="Oppor_Dateofevent" ColumnName="Oppor_Dateofevent" />
-                <ScalarProperty Name="Oppor_ImageThumbnailUrl" ColumnName="Oppor_ImageThumbnailUrl" />
-                <ScalarProperty Name="Oppor_ImageUrl" ColumnName="Oppor_ImageUrl" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+                <ScalarProperty Name="ImageMimeType" ColumnName="ImageMimeType" />
                 <ScalarProperty Name="Oppor_Streetaddress" ColumnName="Oppor_Streetaddress" />
                 <ScalarProperty Name="Oppor_Streetaddress2" ColumnName="Oppor_Streetaddress2" />
                 <ScalarProperty Name="Oppor_City" ColumnName="Oppor_City" />
@@ -473,7 +646,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_User">
-            <EntityTypeMapping TypeName="Model.tbl_User">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.tbl_User">
               <MappingFragment StoreEntitySet="tbl_User">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
@@ -483,7 +656,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Volunteer">
-            <EntityTypeMapping TypeName="Model.tbl_Volunteer">
+            <EntityTypeMapping TypeName="ADDED_IMAGESModel.tbl_Volunteer">
               <MappingFragment StoreEntitySet="tbl_Volunteer">
                 <ScalarProperty Name="Volun_Id" ColumnName="Volun_Id" />
                 <ScalarProperty Name="VolunFname" ColumnName="VolunFname" />
@@ -545,8 +718,9 @@
                 <ScalarProperty Name="VolunFlaggedInformation" ColumnName="VolunFlaggedInformation" />
                 <ScalarProperty Name="VolunGeneralNotes" ColumnName="VolunGeneralNotes" />
                 <ScalarProperty Name="VolunUpdateHours" ColumnName="VolunUpdateHours" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

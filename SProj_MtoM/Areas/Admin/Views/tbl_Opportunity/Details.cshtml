@@ -1,4 +1,4 @@
-﻿@model Proj_BOL.tbl_Opportunity
+﻿@model SProj_MtoM.ViewModels.OpportunityViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -6,158 +6,216 @@
 }
 
 <h2>Details</h2>
+@using (Html.BeginForm("Edit", "tbl_Opportunity", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
 
-<div>
-    <h4>Opportunity</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Name)
-        </dt>
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Oppor_Id)
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Name)
-        </dd>
+        @foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            switch (property.PropertyName)
+            {
+                case "Oppor_Id":
+                case "ImageData":
+                case "ImageMimeType":
+                    // do nothing
+                    break;
+                default:
+                    break;
+            }
+        }
+        <div>
+            <h4>Opportunity</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Description)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Description)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Description)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Dateofevent)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Description)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Dateofevent)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Dateofevent)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_ImageThumbnailUrl)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Dateofevent)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Streetaddress)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_ImageThumbnailUrl)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Streetaddress)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_ImageUrl)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Streetaddress2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_ImageUrl)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Streetaddress2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Streetaddress)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_City)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Streetaddress)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_City)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Streetaddress2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_State)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Streetaddress2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_State)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_City)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Zip)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_City)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Zip)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_State)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_County)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_State)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_County)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Zip)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Eldersource)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Zip)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Eldersource)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_County)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_Eldersourceinstitute)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_County)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_Eldersourceinstitute)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Eldersource)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_RequiresBackgroundCheck)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Eldersource)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_RequiresBackgroundCheck)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_Eldersourceinstitute)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_IsFeatured)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_Eldersourceinstitute)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_IsFeatured)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_RequiresBackgroundCheck)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Oppor_CreatedOn)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_RequiresBackgroundCheck)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Oppor_CreatedOn)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_IsFeatured)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_IsFeatured)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.UserId)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Oppor_CreatedOn)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Role)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Oppor_CreatedOn)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Categories)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
+                <dd>
+                    @foreach (var item in Model.Categories)
+                    {
+                        if (item.Checked)
+                        {
+                            <div>@item.Name</div>
+                        }
+                    }
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
+            </dl>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categories, new { @class = "control-label col-md-2" })
+            <div class="container-fluid">
+                @for (int i = 0; i < Model.Categories.Count(); i++)
+                {
+                    @Html.EditorFor(m => Model.Categories[i].Checked)
+                    @Html.DisplayFor(m => Model.Categories[i].Name)
 
-        <dd>
-            @Html.DisplayFor(model => model.Role)
-        </dd>
+                    @Html.HiddenFor(m => Model.Categories[i].Name)
+                    @Html.HiddenFor(m => Model.Categories[i].Id)
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="position:relative;">
+                <label>Image</label>
+                <a class='btn' href='javascript:;'>
+                    Choose File...
+                    <input type="file" name="Image" size="40"
+                           style="position:absolute;z-index:2;top:0;
+                            left:0;filter: alpha(opacity=0); opacity:0;
+                            background-color:transparent;color:transparent;"
+                           onchange='$("#upload-file-info").html($(this).val());'>
+                </a>
+                <span class='label label-info' id="upload-file-info"></span>
+            </div>
+            @if (Model.ImageData == null)
+            {
+                <div class="form-control-static">No Image</div>
+            }
+            else
+            {
+                <img class="img-thumbnail" width="150" height="150"
+                     src="@Url.Action("GetImage", "tbl_Opportunity", new { Model.Oppor_Id })" />
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Oppor_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            }
+        </div>
+    </div>
+}
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Oppor_Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>

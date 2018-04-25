@@ -1,4 +1,4 @@
-﻿@model Proj_BOL.tbl_Opportunity
+﻿@model SProj_MtoM.ViewModels.OpportunityViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,10 +7,30 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Edit", "tbl_Opportunity", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
+<div class="form-horizontal">
+    <h4>Opportunity</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Oppor_Id)
+
+    @foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        switch (property.PropertyName)
+        {
+            case "Oppor_Id":
+            case "ImageData":
+            case "ImageMimeType":
+                // do nothing
+                break;
+            default:
+                break;
+        }
+    }
+
     <div class="form-horizontal">
         <h4>Opportunity</h4>
         <hr />
@@ -36,22 +56,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Oppor_Dateofevent, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Oppor_Dateofevent, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Oppor_ImageThumbnailUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Oppor_ImageThumbnailUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Oppor_ImageThumbnailUrl, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Oppor_ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Oppor_ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Oppor_ImageUrl, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -167,46 +171,53 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Categories, new { @class = "control-label col-md-2" })
+            <div class="container-fluid">
+                @for (int i = 0; i < Model.Categories.Count(); i++)
+                {
+                    @Html.EditorFor(m => Model.Categories[i].Checked)
+                    @Html.DisplayFor(m => Model.Categories[i].Name)
 
-        <div class="row">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="form-group col-md-4">
-                <label class="control-label">Category Assigned</label>
-                @Html.ListBox("selectedOptions", (MultiSelectList)ViewBag.selOpts, new { @class = "form-control" })
-            </div>
-            <div class="form-group col-md-1">
-                <div class="form-group">
-                    <button type="button" id="btnRight" class="btn btn-warning btn-lg">
-                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="form-group">
-                    <button type="button" id="btnLeft" class="btn btn-success btn-lg">
-                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-                    </button>
-                    <div></div>
-                </div>
-            </div>
-            <div class="form-group col-md-4">
-                <label class="control-label">Available Categories</label>
-                @Html.ListBox("availOptions", (MultiSelectList)ViewBag.availOpts, new { @class = "form-control" })
+                    @Html.HiddenFor(m => Model.Categories[i].Name)
+                    @Html.HiddenFor(m => Model.Categories[i].Id)
+                }
             </div>
         </div>
-
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" id="btnSubmit" value="Create" class="btn btn-default" />
-
+            <div style="position:relative;">
+                <label>Image</label>
+                <a class='btn' href='javascript:;'>
+                    Choose File...
+                    <input type="file" name="Image" size="40"
+                           style="position:absolute;z-index:2;top:0;
+                            left:0;filter: alpha(opacity=0); opacity:0;
+                            background-color:transparent;color:transparent;"
+                           onchange='$("#upload-file-info").html($(this).val());'>
+                </a>
+                <span class='label label-info' id="upload-file-info"></span>
             </div>
+            @if (Model.ImageData == null)
+            {
+                <div class="form-control-static">No Image</div>
+            }
+            else
+            {
+                <img class="img-thumbnail" width="150" height="150"
+                     src="@Url.Action("GetImage", "tbl_Opportunity",new { Model.Oppor_Id })" />
+
+            }
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-@*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/multisel")
-}*@
+    <div class="panel-footer">
+            <input type="submit" id="btnSubmit" value="Create" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new
+            {
+                @class = "btn btn-default"
+            })
+        </div>
+    </div>
+        }
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

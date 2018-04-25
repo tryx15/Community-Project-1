@@ -15,9 +15,11 @@ namespace Proj_BOL
     public class tbl_CategoryValidation
     {
         [Required]
+        [Display(Name = "Category Name")]
         public string CategoryName { get; set; }
 
         [Required]
+        [Display(Name = "Category Description")]
         public string CategoryDesc { get; set; }
     } //End class
 

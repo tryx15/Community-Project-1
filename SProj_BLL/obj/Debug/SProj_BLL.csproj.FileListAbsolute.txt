@@ -26,3 +26,135 @@ E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM_StepByStep\SProj_MtoM (17_G
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM_StepByStep\SProj_MtoM (17_Got the Approve-Disapprove to work)\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM_StepByStep\SProj_MtoM (17_Got the Approve-Disapprove to work)\SProj_BLL\obj\Debug\SProj_BLL.dll
 E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM_StepByStep\SProj_MtoM (17_Got the Approve-Disapprove to work)\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_basket_IntError)\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Inprogress(19d)BabyStore_AddnRemove)\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (19d)BeforeAuthorization - Copy\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddedCategoryLinktoOpp\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)AddDetailPage\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy\SProj_BLL\obj\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\SProj_BLL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\EntityFramework.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\Proj_BOL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\Proj_BOL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\SProj_DAL.pdb
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\SProj_DAL.dll.config
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\bin\Debug\EntityFramework.xml
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\obj\Debug\SProj_BLL.csprojResolveAssemblyReference.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CoreCompileInputs.cache
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\obj\Debug\SProj_BLL.csproj.CopyComplete
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\obj\Debug\SProj_BLL.dll
+E:\aSP.net_senior_project1\SeniorProject1\SProj_MtoM (Final)DesignRegistrationPage - Copy - Copy\SProj_BLL\obj\Debug\SProj_BLL.pdb

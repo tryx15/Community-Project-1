@@ -1,0 +1,50 @@
+﻿@model SProj_MtoM.Areas.Common.ViewModels.BasketViewModel
+@{
+    ViewBag.Title = "Your Basket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Model.BasketLines.Count() > 0)
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Opportunity</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.BasketLines.Count; i++)
+            {
+                <tr>
+                    <td class="text-left">@Model.BasketLines[i].tbl_Opportunity.Oppor_Name</td>
+                    <td class="btn btn-sm btn-warning">
+                        @Html.ActionLink("Remove", "RemoveLine", "Basket", new { Oppor_Id = Model.BasketLines[i].tbl_Opportunity.Oppor_Id }, null)
+                    </td>
+
+                </tr>
+
+            }
+            @*<tr class="row floated-cols">
+                    <td class="col-md-2">
+                        @Html.ActionLink("Volunteer Now", "Review", "Volunteer", null, new { @class = "btn btn-sm btn-success" })
+                    </td>
+                </tr>*@
+
+        </tbody>
+
+    </table>
+}
+else
+{
+    <p>Your Basket is empty</p>
+}
+<div class="text-center">
+    <a>@Html.ActionLink("Back to List", "Index", "Opportunity", null, new { @class = "btn btn-primary" }) </a>
+    <a>
+        @Html.ActionLink("Volunteer Now", "Review", "Volunteer", null, new { @class = "btn btn-primary" })
+    </a>
+</div>

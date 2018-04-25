@@ -20,11 +20,12 @@
 <table class="table table-responsive table-bordered table-striped table-hover" >
     <tr class="info">
         <th>
-            @Html.ActionLink("CategoryName", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryName", page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
+            @Html.ActionLink("Category Name", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryName", page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.ActionLink("CategoryDesc", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryDesc", page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
+            @Html.ActionLink("Category Description", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc")), SortBy = "CategoryDesc", page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
+        <th>Details</th>
         <th>Delete</th>
     </tr>
 
@@ -37,9 +38,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CategoryDesc)
             </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Category_Id }, new { onclick = "return ConfirmDelete()" })
-            </td>
+            <td>@Html.ActionLink("Details", "Details", new { id = item.Category_Id })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = item.Category_Id }, new { onclick = "return ConfirmDelete()" })</td>
         </tr>
     }
 

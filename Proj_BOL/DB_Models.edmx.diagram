@@ -4,17 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c4b8a3eeae0c4145ba073042305c5d9d" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.OPPOR_HAS_CATEGORY" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.OPPOR_HAS_VOLUN" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.tbl_Category" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.tbl_Opportunity" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.tbl_User" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.tbl_Volunteer" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK__OPPOR_HAS__Categ__68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK__OPPOR_HAS__Oppor__6754599E" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK__OPPOR_HAS__Oppor__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK__OPPOR_HAS__Volun__6C190EBB" ManuallyRouted="false" />
+      <Diagram DiagramId="083a638f45af4e928e47e4be489a9585" Name="Diagram1">
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.BasketLine" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.OPPOR_HAS_CATEGORY" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.OPPOR_HAS_VOLUN" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.OrderLine" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.tbl_Category" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.tbl_Opportunity" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.tbl_User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ADDED_IMAGESModel.tbl_Volunteer" Width="1.5" PointX="3.75" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__BasketLin__Oppor__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OPPOR_HAS__Categ__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OPPOR_HAS__Oppor__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OPPOR_HAS__Oppor__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OPPOR_HAS__Volun__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OrderLine__Oppor__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="ADDED_IMAGESModel.FK__OrderLine__Volun__35BCFE0A" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

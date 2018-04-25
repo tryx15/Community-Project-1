@@ -25,8 +25,10 @@ namespace Proj_BOL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BasketLine> BasketLines { get; set; }
         public virtual DbSet<OPPOR_HAS_CATEGORY> OPPOR_HAS_CATEGORY { get; set; }
         public virtual DbSet<OPPOR_HAS_VOLUN> OPPOR_HAS_VOLUN { get; set; }
+        public virtual DbSet<OrderLine> OrderLines { get; set; }
         public virtual DbSet<tbl_Category> tbl_Category { get; set; }
         public virtual DbSet<tbl_Opportunity> tbl_Opportunity { get; set; }
         public virtual DbSet<tbl_User> tbl_User { get; set; }

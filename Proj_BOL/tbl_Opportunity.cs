@@ -17,16 +17,18 @@ namespace Proj_BOL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Opportunity()
         {
+            this.BasketLines = new HashSet<BasketLine>();
             this.OPPOR_HAS_CATEGORY = new HashSet<OPPOR_HAS_CATEGORY>();
             this.OPPOR_HAS_VOLUN = new HashSet<OPPOR_HAS_VOLUN>();
+            this.OrderLines = new HashSet<OrderLine>();
         }
     
         public int Oppor_Id { get; set; }
         public string Oppor_Name { get; set; }
         public string Oppor_Description { get; set; }
         public System.DateTime Oppor_Dateofevent { get; set; }
-        public string Oppor_ImageThumbnailUrl { get; set; }
-        public string Oppor_ImageUrl { get; set; }
+        public byte[] ImageData { get; set; }
+        public string ImageMimeType { get; set; }
         public string Oppor_Streetaddress { get; set; }
         public string Oppor_Streetaddress2 { get; set; }
         public string Oppor_City { get; set; }
@@ -42,8 +44,12 @@ namespace Proj_BOL
         public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BasketLine> BasketLines { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OPPOR_HAS_CATEGORY> OPPOR_HAS_CATEGORY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OPPOR_HAS_VOLUN> OPPOR_HAS_VOLUN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderLine> OrderLines { get; set; }
     }
 }

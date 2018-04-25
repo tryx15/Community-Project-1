@@ -20,6 +20,7 @@ namespace SProj_DAL
         {
             return db.tbl_Category.ToList();
         }
+
         public tbl_Category GetByID(int Id)
         {
             return db.tbl_Category.Find(Id);

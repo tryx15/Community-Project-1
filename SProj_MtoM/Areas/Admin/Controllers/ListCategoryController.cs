@@ -1,12 +1,16 @@
-﻿using SProj_BLL;
+﻿using Proj_BOL;
+using SProj_BLL;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "A")]
     public class ListCategoryController : BaseAdminController
     {
         //private AdminBs objBs;
@@ -83,5 +87,58 @@ namespace SProj_MtoM.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
         }
+/// <summary>
+/// //////////////////////////////////////////////////////////////////////////////////////
+/// </summary>
+/// 
+
+        private DB_Models db = new DB_Models();
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tbl_Category tbl_Category = db.tbl_Category.Find(id);
+            if (tbl_Category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tbl_Category);
+        }
+
+
+        // GET: Common/tbl_Category/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tbl_Category tbl_Category = db.tbl_Category.Find(id);
+            if (tbl_Category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tbl_Category);
+        }
+
+        // POST: Common/tbl_Category/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Category_Id,CategoryName,CategoryDesc")] tbl_Category tbl_Category)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tbl_Category).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(tbl_Category);
+        }
+
     }
 }

@@ -1,0 +1,312 @@
+﻿@model Proj_BOL.tbl_Volunteer
+
+
+@{
+    ViewBag.Title = "Review Selections";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("Create", "Volunteer"))
+{
+    @Html.AntiForgeryToken()
+
+    <hr />
+    <table class="users">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <tr class="row">
+            <td class="col-md-2"><label>Opportunity</label></td>
+        </tr>
+        @foreach (var item in Model.OrderLines)
+    {
+        <tr class="row">
+            <td class="col-md-2">@Html.DisplayFor(modelItem => item.tbl_Opportunity.Oppor_Name)</td>
+        </tr>
+}
+
+
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunFname, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunFname, new { htmlAttributes = new { @class = "form-control", @placeholder = "First name" } })
+                @Html.ValidationMessageFor(model => model.VolunFname, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunLname, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunLname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last name" } })
+                @Html.ValidationMessageFor(model => model.VolunLname, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunEmail, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter email" } })
+                @Html.ValidationMessageFor(model => model.VolunEmail, "", new { @class = "text-danger" })
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunDateofbirth, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunDateofbirth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VolunDateofbirth, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunStreetaddress, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunStreetaddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address" } })
+                @Html.ValidationMessageFor(model => model.VolunStreetaddress, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td> @Html.LabelFor(model => model.VolunStreetaddress2, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunStreetaddress2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address Line 2" } })
+                @Html.ValidationMessageFor(model => model.VolunStreetaddress2, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td> @Html.LabelFor(model => model.VolunCity, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunCity, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
+                @Html.ValidationMessageFor(model => model.VolunCity, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunState, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunState, new { htmlAttributes = new { @class = "form-control", @placeholder = "State" } })
+                @Html.ValidationMessageFor(model => model.VolunState, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunZip, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunZip, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zip Code" } })
+                @Html.ValidationMessageFor(model => model.VolunZip, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.County, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.County, new { htmlAttributes = new { @class = "form-control", @placeholder = "County" } })
+                @Html.ValidationMessageFor(model => model.County, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+         
+        <tr>
+            <td><label>Availability:</label></td>
+            <td style="border:solid"><label>Sunday</label></td>
+            <td style="border:solid"><label>Monday</label></td>
+            <td style="border:solid"><label>Tuesday</label></td>
+            <td style="border:solid"><label>Wednesday</label></td>
+            <td style="border:solid"><label>Thursday</label></td>
+            <td style="border:solid"><label>Friday</label></td>
+            <td style="border:solid"><label>Saturday</label></td>
+        </tr>
+        <tr>
+            <td><label>All Day:</label></td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSunday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableMonday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableTuesday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableWednesday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableThursday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableFriday)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSaturday)
+            </td>
+        </tr>
+        <tr>
+            <td><label>Morning:</label></td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSundayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableMondayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableTuesdayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableWednesdayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableThursdayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableFridayMorning)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSaturdayMorning)
+            </td>
+        </tr>
+        <tr>
+            <td><label>Afternoon:</label></td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSundayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableMondayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableTuesdayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableWednesdayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableThursdayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableFridayAfternoon)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSaturdayAfternoon)
+            </td>
+        </tr>
+        <tr>
+            <td><label>Evening:</label></td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSundayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableMondayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableTuesdayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableWednesdayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableThursdayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableFridayEvening)
+            </td>
+            <td style="border:solid">
+                @Html.EditorFor(m => m.VolunAvailableSaturdayEvening)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center"><h4>Interest:</h4></td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                @Html.EditorFor(model => model.VoluntNutrition)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VoluntNutrition, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunTrainingFacilitator)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunTrainingFacilitator, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunAdmin)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunAdmin, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                @Html.EditorFor(model => model.VolunGeneral)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunGeneral, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunHealthyliving)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunHealthyliving, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunDiseaseManagement)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunDiseaseManagement, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                @Html.EditorFor(model => model.VolunFallsPrevention)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunFallsPrevention, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunCaregiver)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunCaregiver, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunMentalWellness)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunMentalWellness, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                @Html.EditorFor(model => model.VolunEvents)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunEvents, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+            <td>
+                @Html.EditorFor(model => model.VolunSocialMedia)
+
+            </td>
+            <td> @Html.LabelFor(model => model.VolunSocialMedia, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+        <tr class="form-group">
+            <td>@Html.LabelFor(model => model.VolunOtherInterest, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td class="col-md-10">
+                @Html.EditorFor(model => model.VolunOtherInterest, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.County, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+        <tr>
+
+            <td></td>
+            <td><input class="btn btn-primary" type="submit" value="Complete Application" /></td>
+        </tr>
+    </table>
+    Html.EndForm();
+}
+<div>
+    @Html.ActionLink("Modify Basket", "Index", "Basket", null, new { @class = "btn btn-success" })
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

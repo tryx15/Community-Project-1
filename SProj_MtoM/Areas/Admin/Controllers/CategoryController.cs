@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "A")]
     public class CategoryController : BaseAdminController
     {
 

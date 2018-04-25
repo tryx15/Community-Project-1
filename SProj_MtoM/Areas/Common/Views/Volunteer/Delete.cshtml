@@ -1,0 +1,521 @@
+﻿@model Proj_BOL.tbl_Volunteer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Volunteer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunFname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunFname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunLname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunLname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunDateofbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunDateofbirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunStreetaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunStreetaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunStreetaddress2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunStreetaddress2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableMonday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableMonday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableMondayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableMondayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableMondayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableMondayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableMondayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableMondayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableTuesday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableTuesday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableTuesdayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableTuesdayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableTuesdayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableTuesdayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableTuesdayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableTuesdayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableWednesday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableWednesday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableWednesdayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableWednesdayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableWednesdayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableWednesdayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableWednesdayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableWednesdayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableThursday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableThursday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableThursdayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableThursdayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableThursdayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableThursdayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableThursdayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableThursdayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableFriday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableFriday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableFridayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableFridayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableFridayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableFridayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableFridayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableFridayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSaturday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSaturday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSaturdayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSaturdayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSaturdayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSaturdayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSaturdayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSaturdayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSunday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSunday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSundayMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSundayMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSundayAfternoon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSundayAfternoon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAvailableSundayEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAvailableSundayEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VoluntNutrition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoluntNutrition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunTrainingFacilitator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunTrainingFacilitator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunGeneral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunGeneral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunHealthyliving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunHealthyliving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunDiseaseManagement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunDiseaseManagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunFallsPrevention)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunFallsPrevention)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunCaregiver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunCaregiver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunMentalWellness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunMentalWellness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunEvents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunEvents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunSocialMedia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunSocialMedia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunOtherInterest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunOtherInterest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunBackgroundCheckRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunBackgroundCheckRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunBackgroundCheckCompletedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunBackgroundCheckCompletedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunBackgroundCheckExpiresOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunBackgroundCheckExpiresOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunActivitiesParticipated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunActivitiesParticipated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunMarkVolunteer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunMarkVolunteer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunFlagged)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunFlagged)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunFlaggedInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunFlaggedInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunGeneralNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunGeneralNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunUpdateHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunUpdateHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsApproved)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

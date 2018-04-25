@@ -25,13 +25,11 @@ namespace Proj_BOL
         [Display(Name = "Date of Event")]
         public System.DateTime Oppor_Dateofevent { get; set; }
 
-        [Display(Name = "Thumbnail Image(Front Page)")]
-        [Url]
-        public string Oppor_ImageThumbnailUrl { get; set; }
+        [Display(Name = "Image")]
+        public byte[] ImageData { get; set; }
 
-        [Display(Name = "Large Image (Description Page)")]
-        [Url]
-        public string Oppor_ImageUrl { get; set; }
+        [Display(Name = "ImageM")]
+        public string ImageMimeType { get; set; }
 
         [Required(ErrorMessage = "Please enter the first address line")]
         [Display(Name = "Street Address")]

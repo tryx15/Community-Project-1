@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SProj_MtoM.Areas.Common.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : BaseCommonController
     {
         // GET: Common/Home

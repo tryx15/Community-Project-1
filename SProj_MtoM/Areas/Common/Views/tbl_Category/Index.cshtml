@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Proj_BOL.tbl_Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+<table class="table table-responsive table-bordered table-striped table-hover">
+    
+       <tr class="info">
+
+            <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+       <tr>
+           <td class="large-text">
+               @Html.ActionLink(item.CategoryName, "Index", "Opportunity", new { category = item.CategoryName }, null)
+           </td>
+
+       </tr>
+    }
+
+</table>

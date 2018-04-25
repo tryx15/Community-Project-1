@@ -84,6 +84,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -118,6 +121,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1-beta3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -177,7 +186,31 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FooterBottom.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="data1\images\learn.jpg" />
+    <Content Include="data1\images\mvc1.png" />
+    <Content Include="data1\images\publish.jpg" />
+    <Content Include="data1\images\registerhere.jpg" />
+    <Content Include="data1\images\url.jpg" />
+    <Content Include="data1\tooltips\learn.jpg" />
+    <Content Include="data1\tooltips\mvc1.png" />
+    <Content Include="data1\tooltips\publish.jpg" />
+    <Content Include="data1\tooltips\registerhere.jpg" />
+    <Content Include="data1\tooltips\url.jpg" />
+    <Content Include="engine1\arrows.png" />
+    <Content Include="engine1\bullet.png" />
+    <Content Include="engine1\fullscreen.png" />
+    <Content Include="engine1\jquery.js" />
+    <Content Include="engine1\pause.png" />
+    <Content Include="engine1\play.png" />
+    <Content Include="engine1\script.js" />
+    <Content Include="engine1\style.css" />
+    <Content Include="engine1\style.mod.css" />
+    <Content Include="engine1\triangle.png" />
+    <Content Include="engine1\wowslider.js" />
+    <Content Include="engine1\wowslider.mod.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -188,6 +221,7 @@
     <Content Include="Areas\Admin\Views\ListVolunteer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
+    <Content Include="index.html" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\multisel.js" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -221,6 +255,27 @@
     <Content Include="Areas\Admin\Views\ApproveVolunteer\pv_ApproveURLs.cshtml" />
     <Content Include="Areas\Security\Views\Login\Index.cshtml" />
     <Content Include="Areas\Security\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Common\Views\Basket\Index.cshtml" />
+    <Content Include="Areas\Common\Views\Volunteer\Delete.cshtml" />
+    <Content Include="Areas\Common\Views\Volunteer\Details.cshtml" />
+    <Content Include="Areas\Common\Views\Volunteer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ApproveVolunteer\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ApproveVolunteer\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ApproveVolunteer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ListCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ListCategory\Details.cshtml" />
+    <Content Include="Areas\Common\Views\tbl_Category\Index.cshtml" />
+    <Content Include="Areas\Common\Views\Volunteer\Review.cshtml" />
+    <Content Include="Areas\Common\Views\Opportunity\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ListVolunteer\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ListVolunteer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ListVolunteer\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Common\Views\Basket\Summary.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -238,6 +293,9 @@
     <Content Include="_SeniorPrj_Db2_MtoM_DataSet.xsc">
       <DependentUpon>_SeniorPrj_Db2_MtoM_DataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Shared\_VolunteerFormLayout.cshtml" />
     <None Include="_SeniorPrj_Db2_MtoM_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_SeniorPrj_Db2_MtoM_DataSet.Designer.cs</LastGenOutput>
@@ -248,6 +306,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ApproveVolunteerController.cs" />
@@ -257,10 +316,16 @@
     <Compile Include="Areas\Admin\Controllers\ListVolunteerController.cs" />
     <Compile Include="Areas\Admin\Controllers\OPPOR_HAS_CATEGORYController.cs" />
     <Compile Include="Areas\Admin\Controllers\tbl_OpportunityController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\BaseCommonController.cs" />
+    <Compile Include="Areas\Common\Controllers\BasketController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\OpportunityController.cs" />
+    <Compile Include="Areas\Common\Controllers\tbl_CategoryController.cs" />
+    <Compile Include="Areas\Common\Controllers\VolunteerController.cs" />
+    <Compile Include="Areas\Common\Models\Basket.cs" />
+    <Compile Include="Areas\Common\ViewModels\BasketViewModel.cs" />
     <Compile Include="Areas\Security\Controllers\BaseSecurityController.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
     <Compile Include="Areas\Security\Controllers\RegisterController.cs" />
@@ -268,8 +333,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewModels\CheckBoxViewModel.cs" />
+    <Compile Include="ViewModels\OpportunityIndexViewModel2.cs" />
+    <Compile Include="ViewModels\OpportunityListViewModel.cs" />
+    <Compile Include="ViewModels\OpportunityViewModel.cs" />
+    <Compile Include="ViewModels\PagingInfo.cs" />
     <Compile Include="_SeniorPrj_Db2_MtoM_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,7 +350,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Areas\Common\Views\web.config" />
+    <Content Include="Areas\Common\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Security\Views\web.config" />
     <None Include="packages.config">
@@ -296,7 +370,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\BaseAdmin\" />
-    <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Common\Views\BaseCommon\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
